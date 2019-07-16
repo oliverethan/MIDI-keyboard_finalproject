@@ -1,0 +1,2 @@
+ldc_set_location -site {2} [get_ports serial]
+ldc_set_location -site {18} [get_ports sample]

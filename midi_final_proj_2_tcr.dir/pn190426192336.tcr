@@ -1,0 +1,46 @@
+#Start recording tcl command: 4/26/2019 16:07:22
+#Project Location: C:/Users/ellesh01/Desktop/midi_final_proj_2; Project name: midi_final_proj_2
+prj_open "C:/Users/ellesh01/Desktop/midi_final_proj_2/midi_final_proj_2.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Export -impl impl_1
+#Stop recording: 4/26/2019 19:23:36

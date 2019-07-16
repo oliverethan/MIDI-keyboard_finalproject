@@ -1,0 +1,4259 @@
+
+// Verilog netlist produced by program backanno, Version Radiant (64-bit) 1.0.0.350.6
+
+// backanno -n Verilog -o midi_final_proj_2_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui midi_final_proj_2_impl_1.udb 
+// Netlist created on Sat Apr 27 14:36:50 2019
+// Netlist written on Sat Apr 27 14:36:53 2019
+// Design is for device iCE40UP5K
+// Design is for package SG48
+// Design is for performance grade 6
+
+`timescale 1 ns / 1 ps
+
+module top ( serial, sample );
+  input  serial;
+  output sample;
+  wire   \sound_out/n133[30] , \sound_out/n133[29] , \sound_out/n4022 , 
+         \sound_out/counter[30] , \sound_out/n2698 , \sound_out/counter[29] , 
+         on_off_sig, \sound_out/n776 , inputclk, \sound_out/n2700 , 
+         \sound_out/n133[28] , \sound_out/n133[27] , \sound_out/n4019 , 
+         \sound_out/counter[28] , \sound_out/n2696 , \sound_out/counter[27] , 
+         \sound_out/n133[10] , \sound_out/n133[9] , \sound_out/n3974 , 
+         \sound_out/counter[10] , \sound_out/n2678 , \sound_out/counter[9] , 
+         \sound_out/n2680 , \sound_out/n133[2] , \sound_out/n133[1] , 
+         \sound_out/n3959 , \sound_out/counter[2] , \sound_out/n2670 , 
+         \sound_out/counter[1] , \sound_out/n2672 , \sound_out/n133[26] , 
+         \sound_out/n133[25] , \sound_out/n4016 , \sound_out/counter[26] , 
+         \sound_out/n2694 , \sound_out/counter[25] , \sound_out/n133[24] , 
+         \sound_out/n133[23] , \sound_out/n4013 , \sound_out/counter[24] , 
+         \sound_out/n2692 , \sound_out/counter[23] , \sound_out/n133[8] , 
+         \sound_out/n133[7] , \sound_out/n3971 , \sound_out/counter[8] , 
+         \sound_out/n2676 , \sound_out/counter[7] , \sound_out/n133[22] , 
+         \sound_out/n133[21] , \sound_out/n3992 , \sound_out/counter[22] , 
+         \sound_out/n2690 , \sound_out/counter[21] , \sound_out/n133[6] , 
+         \sound_out/n133[5] , \sound_out/n3965 , \sound_out/counter[6] , 
+         \sound_out/n2674 , \sound_out/counter[5] , \sound_out/n133[4] , 
+         \sound_out/n133[3] , \sound_out/n3962 , \sound_out/counter[4] , 
+         \sound_out/counter[3] , \sound_out/n133[20] , \sound_out/n133[19] , 
+         \sound_out/n3989 , \sound_out/counter[20] , \sound_out/n2688 , 
+         \sound_out/counter[19] , \sound_out/n133[18] , \sound_out/n133[17] , 
+         \sound_out/n3986 , \sound_out/counter[18] , \sound_out/n2686 , 
+         \sound_out/counter[17] , \sound_out/n133[0] , \sound_out/n3956 , 
+         \sound_out/counter[0] , VCC_net, \sound_out/n133[16] , 
+         \sound_out/n133[15] , \sound_out/n3983 , \sound_out/counter[16] , 
+         \sound_out/n2684 , \sound_out/counter[15] , \sound_out/n133[14] , 
+         \sound_out/n133[13] , \sound_out/n3980 , \sound_out/counter[14] , 
+         \sound_out/n2682 , \sound_out/counter[13] , \sound_out/n133[12] , 
+         \sound_out/n133[11] , \sound_out/n3977 , \sound_out/counter[12] , 
+         \sound_out/counter[11] , \sound_out/n133[31] , \sound_out/n4025 , 
+         \sound_out/counter[31] , \midi_in/n57[9] , \midi_in/n4010 , 
+         \midi_in/n2711 , \clock_counter[9] , \midi_in/n657 , \midi_in/n783 , 
+         outclk, \midi_in/n4007 , \midi_in/clock_counter[8] , \midi_in/n2709 , 
+         \midi_in/clock_counter[7] , \midi_in/n57[7] , \midi_in/n57[8] , 
+         \midi_in/n4004 , \midi_in/clock_counter[6] , \midi_in/n2707 , 
+         \midi_in/clock_counter[5] , \midi_in/n57[5] , \midi_in/n57[6] , 
+         \midi_in/n57[3] , \midi_in/n4001 , \clock_counter[4] , 
+         \midi_in/n2705 , \midi_in/clock_counter[3] , \midi_in/n57[4] , 
+         \midi_in/n57[2] , \midi_in/n3998 , \midi_in/clock_counter[2] , 
+         \midi_in/n2703 , \clock_counter[1] , \midi_in/n57[1] , 
+         \midi_in/n3995 , \clock_counter[0] , \midi_in/n57[0] , n3122, n3182, 
+         \note_sig[0] , n666, \byte_sig[0] , n738, \note_sig[1] , 
+         \byte_sig[1] , n3178, n3180, \note_sig[3] , \byte_sig[3] , 
+         \byte_sig[2] , \note_sig[2] , n3174, n3176, \note_sig[5] , 
+         \byte_sig[5] , \byte_sig[4] , \note_sig[4] , \midi_in/n80[2] , 
+         \midi_in/n80[1] , \midi_in/bit_index[2] , \midi_in/bit_index[1] , 
+         \bit_index[0] , n650, n799, n843, n883, data, n616, n4, n621, 
+         \midi_in/tracker_1__N_9[0] , \midi_in/tracker_1__N_9[1] , 
+         \tracker[1] , \midi_in/n1 , \midi_in/n2 , 
+         \midi_in/tracker_1__N_47[1] , \tracker[0] , \midi_in/n19 , 
+         \midi_in/n172[0] , \midi_in/n172[1] , n171, \midi_in/n778 , 
+         \midi_in/n172[6] , \midi_in/n172[5] , \midi_in/n172[8] , 
+         \midi_in/n172[7] , n848, n849, \byte_sig[6] , n1398, \byte_sig[7] , 
+         n846, n847, n4_adj_212, n844, n845, n4_adj_213, 
+         \sound_out/get_frequency/n59 , \sound_out/get_frequency/n4 , 
+         \sound_out/get_frequency/n3492 , \sound_out/get_frequency/n1429 , 
+         \note_sig[6] , \sound_out/get_frequency/n65 , \sound_out/n6_adj_208 , 
+         \sound_out/get_frequency/n4_adj_203 , \sound_out/get_frequency/n3481 , 
+         \sound_out/get_frequency/n613 , \sound_out/frequency[16] , n3436, 
+         n3434, n3267, n3347, n626, n3271, \midi_in/n583 , \midi_in/n1427 , 
+         \midi_in/n4_c , \sound_out/n20 , \sound_out/frequency[10] , 
+         \sound_out/n18 , \sound_out/frequency[9] , \sound_out/n22 , 
+         \sound_out/get_frequency/n3444 , \sound_out/get_frequency/n3443 , 
+         \sound_out/get_frequency/n3441 , \sound_out/get_frequency/n3439 , 
+         \sound_out/n3350 , \sound_out/n16 , \sound_out/frequency[8] , 
+         \sound_out/n14 , \sound_out/frequency[7] , 
+         \sound_out/get_frequency/n3505 , \sound_out/get_frequency/n6_c , 
+         \sound_out/get_frequency/n3788 , \sound_out/get_frequency/n4_adj_202 , 
+         \sound_out/get_frequency/n3432 , \sound_out/get_frequency/n3429 , 
+         \sound_out/n2861 , \sound_out/n12 , \sound_out/n74 , \sound_out/n10 , 
+         \sound_out/frequency[5] , \sound_out/get_frequency/n22 , 
+         \sound_out/get_frequency/n3499 , \sound_out/get_frequency/n1441 , 
+         \sound_out/get_frequency/n3497 , \sound_out/get_frequency/n1408 , 
+         \sound_out/get_frequency/n1378 , \sound_out/get_frequency/n1425 , 
+         \sound_out/frequency[4] , \sound_out/n8 , \sound_out/frequency[3] , 
+         \sound_out/n6 , \sound_out/get_frequency/n3494 , 
+         \sound_out/get_frequency/n3839 , \sound_out/get_frequency/n3486 , 
+         \sound_out/get_frequency/n3489 , \sound_out/n2857 , \sound_out/n4 , 
+         \sound_out/n40 , \sound_out/frequency[0] , \sound_out/frequency[1] , 
+         \sound_out/get_frequency/n3483 , \sound_out/get_frequency/n36 , 
+         \sound_out/get_frequency/n3471 , \sound_out/get_frequency/n40_c , 
+         \sound_out/n22_adj_205 , \sound_out/n16_adj_206 , \sound_out/n24 , 
+         n3194, n3265, \status_byte[4] , \sound_out/sample_N_171 , 
+         \sound_out/n36 , \sound_out/n23 , \sound_out/n34 , 
+         \sound_out/n14_adj_207 , \sound_out/n32 , \sound_out/frequency[15] , 
+         \sound_out/n30 , \sound_out/frequency[14] , \sound_out/n28 , 
+         \sound_out/n26 , \sound_out/frequency[13] , 
+         \sound_out/get_frequency/n38 , \sound_out/get_frequency/n3468 , 
+         \sound_out/get_frequency/n3458 , \sound_out/get_frequency/n3459 , 
+         \sound_out/n24_adj_209 , \sound_out/frequency[12] , 
+         \sound_out/frequency[11] , \sound_out/get_frequency/n1435 , 
+         \sound_out/get_frequency/n3454 , \sound_out/get_frequency/n3800 , 
+         \sound_out/get_frequency/n3448 , \sound_out/get_frequency/n3446 , 
+         \sound_out/get_frequency/n50 , \sound_out/get_frequency/n52 , 
+         \sound_out/get_frequency/n3484 , \sound_out/get_frequency/n30 , 
+         \sound_out/get_frequency/n102 , \sound_out/get_frequency/n3463 , 
+         \sound_out/get_frequency/n71 , \sound_out/get_frequency/n77 , 
+         \sound_out/get_frequency/n3464 , \sound_out/get_frequency/n3465 , 
+         \sound_out/get_frequency/n33 , \sound_out/get_frequency/n3475 , 
+         \sound_out/get_frequency/n43 , \sound_out/get_frequency/n35 , 
+         \sound_out/get_frequency/n3836 , \sound_out/get_frequency/n3785 , 
+         \sound_out/get_frequency/n1368 , \sound_out/get_frequency/n3431 , 
+         \sound_out/get_frequency/n3500 , \midi_in/n172[4] , \midi_in/n1418 , 
+         \midi_in/n185 , n886, \midi_in/n8 , \midi_in/n634 , 
+         \data/sig_000/FeedThruLUT , \midi_in/data_r , \tracker_adj_216[1] , 
+         \tracker_adj_216[0] , valid_sig, n3264, \midi_parse/n1 , 
+         \midi_parse/n647 , \midi_parse/n3196 , n3188, n3162, n3511, 
+         \sound_out/sample_N_170 , sample_c, n3172, \midi_in/n836 , serial_c, 
+         \baud_sync/lscc_pll_inst/feedback_w ;
+
+  SLICE_0 SLICE_0( .DI1(\sound_out/n133[30] ), .DI0(\sound_out/n133[29] ), 
+    .D1(\sound_out/n4022 ), .C1(\sound_out/counter[30] ), 
+    .D0(\sound_out/n2698 ), .C0(\sound_out/counter[29] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2698 ), 
+    .CIN1(\sound_out/n4022 ), .Q0(\sound_out/counter[29] ), 
+    .Q1(\sound_out/counter[30] ), .F0(\sound_out/n133[29] ), 
+    .F1(\sound_out/n133[30] ), .COUT1(\sound_out/n2700 ), 
+    .COUT0(\sound_out/n4022 ));
+  SLICE_1 SLICE_1( .DI1(\sound_out/n133[28] ), .DI0(\sound_out/n133[27] ), 
+    .D1(\sound_out/n4019 ), .C1(\sound_out/counter[28] ), 
+    .D0(\sound_out/n2696 ), .C0(\sound_out/counter[27] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2696 ), 
+    .CIN1(\sound_out/n4019 ), .Q0(\sound_out/counter[27] ), 
+    .Q1(\sound_out/counter[28] ), .F0(\sound_out/n133[27] ), 
+    .F1(\sound_out/n133[28] ), .COUT1(\sound_out/n2698 ), 
+    .COUT0(\sound_out/n4019 ));
+  SLICE_2 SLICE_2( .DI1(\sound_out/n133[10] ), .DI0(\sound_out/n133[9] ), 
+    .D1(\sound_out/n3974 ), .C1(\sound_out/counter[10] ), 
+    .D0(\sound_out/n2678 ), .C0(\sound_out/counter[9] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2678 ), 
+    .CIN1(\sound_out/n3974 ), .Q0(\sound_out/counter[9] ), 
+    .Q1(\sound_out/counter[10] ), .F0(\sound_out/n133[9] ), 
+    .F1(\sound_out/n133[10] ), .COUT1(\sound_out/n2680 ), 
+    .COUT0(\sound_out/n3974 ));
+  SLICE_3 SLICE_3( .DI1(\sound_out/n133[2] ), .DI0(\sound_out/n133[1] ), 
+    .D1(\sound_out/n3959 ), .C1(\sound_out/counter[2] ), 
+    .D0(\sound_out/n2670 ), .C0(\sound_out/counter[1] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2670 ), 
+    .CIN1(\sound_out/n3959 ), .Q0(\sound_out/counter[1] ), 
+    .Q1(\sound_out/counter[2] ), .F0(\sound_out/n133[1] ), 
+    .F1(\sound_out/n133[2] ), .COUT1(\sound_out/n2672 ), 
+    .COUT0(\sound_out/n3959 ));
+  SLICE_4 SLICE_4( .DI1(\sound_out/n133[26] ), .DI0(\sound_out/n133[25] ), 
+    .D1(\sound_out/n4016 ), .C1(\sound_out/counter[26] ), 
+    .D0(\sound_out/n2694 ), .C0(\sound_out/counter[25] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2694 ), 
+    .CIN1(\sound_out/n4016 ), .Q0(\sound_out/counter[25] ), 
+    .Q1(\sound_out/counter[26] ), .F0(\sound_out/n133[25] ), 
+    .F1(\sound_out/n133[26] ), .COUT1(\sound_out/n2696 ), 
+    .COUT0(\sound_out/n4016 ));
+  SLICE_5 SLICE_5( .DI1(\sound_out/n133[24] ), .DI0(\sound_out/n133[23] ), 
+    .D1(\sound_out/n4013 ), .C1(\sound_out/counter[24] ), 
+    .D0(\sound_out/n2692 ), .C0(\sound_out/counter[23] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2692 ), 
+    .CIN1(\sound_out/n4013 ), .Q0(\sound_out/counter[23] ), 
+    .Q1(\sound_out/counter[24] ), .F0(\sound_out/n133[23] ), 
+    .F1(\sound_out/n133[24] ), .COUT1(\sound_out/n2694 ), 
+    .COUT0(\sound_out/n4013 ));
+  SLICE_6 SLICE_6( .DI1(\sound_out/n133[8] ), .DI0(\sound_out/n133[7] ), 
+    .D1(\sound_out/n3971 ), .C1(\sound_out/counter[8] ), 
+    .D0(\sound_out/n2676 ), .C0(\sound_out/counter[7] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2676 ), 
+    .CIN1(\sound_out/n3971 ), .Q0(\sound_out/counter[7] ), 
+    .Q1(\sound_out/counter[8] ), .F0(\sound_out/n133[7] ), 
+    .F1(\sound_out/n133[8] ), .COUT1(\sound_out/n2678 ), 
+    .COUT0(\sound_out/n3971 ));
+  SLICE_7 SLICE_7( .DI1(\sound_out/n133[22] ), .DI0(\sound_out/n133[21] ), 
+    .D1(\sound_out/n3992 ), .C1(\sound_out/counter[22] ), 
+    .D0(\sound_out/n2690 ), .C0(\sound_out/counter[21] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2690 ), 
+    .CIN1(\sound_out/n3992 ), .Q0(\sound_out/counter[21] ), 
+    .Q1(\sound_out/counter[22] ), .F0(\sound_out/n133[21] ), 
+    .F1(\sound_out/n133[22] ), .COUT1(\sound_out/n2692 ), 
+    .COUT0(\sound_out/n3992 ));
+  SLICE_8 SLICE_8( .DI1(\sound_out/n133[6] ), .DI0(\sound_out/n133[5] ), 
+    .D1(\sound_out/n3965 ), .C1(\sound_out/counter[6] ), 
+    .D0(\sound_out/n2674 ), .C0(\sound_out/counter[5] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2674 ), 
+    .CIN1(\sound_out/n3965 ), .Q0(\sound_out/counter[5] ), 
+    .Q1(\sound_out/counter[6] ), .F0(\sound_out/n133[5] ), 
+    .F1(\sound_out/n133[6] ), .COUT1(\sound_out/n2676 ), 
+    .COUT0(\sound_out/n3965 ));
+  SLICE_9 SLICE_9( .DI1(\sound_out/n133[4] ), .DI0(\sound_out/n133[3] ), 
+    .D1(\sound_out/n3962 ), .C1(\sound_out/counter[4] ), 
+    .D0(\sound_out/n2672 ), .C0(\sound_out/counter[3] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2672 ), 
+    .CIN1(\sound_out/n3962 ), .Q0(\sound_out/counter[3] ), 
+    .Q1(\sound_out/counter[4] ), .F0(\sound_out/n133[3] ), 
+    .F1(\sound_out/n133[4] ), .COUT1(\sound_out/n2674 ), 
+    .COUT0(\sound_out/n3962 ));
+  SLICE_10 SLICE_10( .DI1(\sound_out/n133[20] ), .DI0(\sound_out/n133[19] ), 
+    .D1(\sound_out/n3989 ), .C1(\sound_out/counter[20] ), 
+    .D0(\sound_out/n2688 ), .C0(\sound_out/counter[19] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2688 ), 
+    .CIN1(\sound_out/n3989 ), .Q0(\sound_out/counter[19] ), 
+    .Q1(\sound_out/counter[20] ), .F0(\sound_out/n133[19] ), 
+    .F1(\sound_out/n133[20] ), .COUT1(\sound_out/n2690 ), 
+    .COUT0(\sound_out/n3989 ));
+  SLICE_11 SLICE_11( .DI1(\sound_out/n133[18] ), .DI0(\sound_out/n133[17] ), 
+    .D1(\sound_out/n3986 ), .C1(\sound_out/counter[18] ), 
+    .D0(\sound_out/n2686 ), .C0(\sound_out/counter[17] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2686 ), 
+    .CIN1(\sound_out/n3986 ), .Q0(\sound_out/counter[17] ), 
+    .Q1(\sound_out/counter[18] ), .F0(\sound_out/n133[17] ), 
+    .F1(\sound_out/n133[18] ), .COUT1(\sound_out/n2688 ), 
+    .COUT0(\sound_out/n3986 ));
+  SLICE_12 SLICE_12( .DI1(\sound_out/n133[0] ), .D1(\sound_out/n3956 ), 
+    .C1(\sound_out/counter[0] ), .B1(VCC_net), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN1(\sound_out/n3956 ), 
+    .Q1(\sound_out/counter[0] ), .F1(\sound_out/n133[0] ), 
+    .COUT1(\sound_out/n2670 ), .COUT0(\sound_out/n3956 ));
+  SLICE_13 SLICE_13( .DI1(\sound_out/n133[16] ), .DI0(\sound_out/n133[15] ), 
+    .D1(\sound_out/n3983 ), .C1(\sound_out/counter[16] ), 
+    .D0(\sound_out/n2684 ), .C0(\sound_out/counter[15] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2684 ), 
+    .CIN1(\sound_out/n3983 ), .Q0(\sound_out/counter[15] ), 
+    .Q1(\sound_out/counter[16] ), .F0(\sound_out/n133[15] ), 
+    .F1(\sound_out/n133[16] ), .COUT1(\sound_out/n2686 ), 
+    .COUT0(\sound_out/n3983 ));
+  SLICE_14 SLICE_14( .DI1(\sound_out/n133[14] ), .DI0(\sound_out/n133[13] ), 
+    .D1(\sound_out/n3980 ), .C1(\sound_out/counter[14] ), 
+    .D0(\sound_out/n2682 ), .C0(\sound_out/counter[13] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2682 ), 
+    .CIN1(\sound_out/n3980 ), .Q0(\sound_out/counter[13] ), 
+    .Q1(\sound_out/counter[14] ), .F0(\sound_out/n133[13] ), 
+    .F1(\sound_out/n133[14] ), .COUT1(\sound_out/n2684 ), 
+    .COUT0(\sound_out/n3980 ));
+  SLICE_15 SLICE_15( .DI1(\sound_out/n133[12] ), .DI0(\sound_out/n133[11] ), 
+    .D1(\sound_out/n3977 ), .C1(\sound_out/counter[12] ), 
+    .D0(\sound_out/n2680 ), .C0(\sound_out/counter[11] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2680 ), 
+    .CIN1(\sound_out/n3977 ), .Q0(\sound_out/counter[11] ), 
+    .Q1(\sound_out/counter[12] ), .F0(\sound_out/n133[11] ), 
+    .F1(\sound_out/n133[12] ), .COUT1(\sound_out/n2682 ), 
+    .COUT0(\sound_out/n3977 ));
+  SLICE_16 SLICE_16( .DI0(\sound_out/n133[31] ), .D1(\sound_out/n4025 ), 
+    .D0(\sound_out/n2700 ), .C0(\sound_out/counter[31] ), .CE(on_off_sig), 
+    .LSR(\sound_out/n776 ), .CLK(inputclk), .CIN0(\sound_out/n2700 ), 
+    .CIN1(\sound_out/n4025 ), .Q0(\sound_out/counter[31] ), 
+    .F0(\sound_out/n133[31] ), .COUT0(\sound_out/n4025 ));
+  SLICE_17 SLICE_17( .DI0(\midi_in/n57[9] ), .D1(\midi_in/n4010 ), 
+    .D0(\midi_in/n2711 ), .B0(\clock_counter[9] ), .CE(\midi_in/n657 ), 
+    .LSR(\midi_in/n783 ), .CLK(outclk), .CIN0(\midi_in/n2711 ), 
+    .CIN1(\midi_in/n4010 ), .Q0(\clock_counter[9] ), .F0(\midi_in/n57[9] ), 
+    .COUT0(\midi_in/n4010 ));
+  SLICE_18 SLICE_18( .D1(\midi_in/n4007 ), .B1(\midi_in/clock_counter[8] ), 
+    .D0(\midi_in/n2709 ), .B0(\midi_in/clock_counter[7] ), 
+    .CIN0(\midi_in/n2709 ), .CIN1(\midi_in/n4007 ), .F0(\midi_in/n57[7] ), 
+    .F1(\midi_in/n57[8] ), .COUT1(\midi_in/n2711 ), .COUT0(\midi_in/n4007 ));
+  SLICE_19 SLICE_19( .D1(\midi_in/n4004 ), .B1(\midi_in/clock_counter[6] ), 
+    .D0(\midi_in/n2707 ), .B0(\midi_in/clock_counter[5] ), 
+    .CIN0(\midi_in/n2707 ), .CIN1(\midi_in/n4004 ), .F0(\midi_in/n57[5] ), 
+    .F1(\midi_in/n57[6] ), .COUT1(\midi_in/n2709 ), .COUT0(\midi_in/n4004 ));
+  SLICE_20 SLICE_20( .DI0(\midi_in/n57[3] ), .D1(\midi_in/n4001 ), 
+    .B1(\clock_counter[4] ), .D0(\midi_in/n2705 ), 
+    .B0(\midi_in/clock_counter[3] ), .CE(\midi_in/n657 ), .LSR(\midi_in/n783 ), 
+    .CLK(outclk), .CIN0(\midi_in/n2705 ), .CIN1(\midi_in/n4001 ), 
+    .Q0(\midi_in/clock_counter[3] ), .F0(\midi_in/n57[3] ), 
+    .F1(\midi_in/n57[4] ), .COUT1(\midi_in/n2707 ), .COUT0(\midi_in/n4001 ));
+  SLICE_21 SLICE_21( .DI1(\midi_in/n57[2] ), .D1(\midi_in/n3998 ), 
+    .B1(\midi_in/clock_counter[2] ), .D0(\midi_in/n2703 ), 
+    .B0(\clock_counter[1] ), .CE(\midi_in/n657 ), .LSR(\midi_in/n783 ), 
+    .CLK(outclk), .CIN0(\midi_in/n2703 ), .CIN1(\midi_in/n3998 ), 
+    .Q1(\midi_in/clock_counter[2] ), .F0(\midi_in/n57[1] ), 
+    .F1(\midi_in/n57[2] ), .COUT1(\midi_in/n2705 ), .COUT0(\midi_in/n3998 ));
+  SLICE_22 SLICE_22( .D1(\midi_in/n3995 ), .C1(VCC_net), 
+    .B1(\clock_counter[0] ), .CIN1(\midi_in/n3995 ), .F1(\midi_in/n57[0] ), 
+    .COUT1(\midi_in/n2703 ), .COUT0(\midi_in/n3995 ));
+  SLICE_26 SLICE_26( .DI1(n3122), .DI0(n3182), .D1(\note_sig[0] ), .C1(n666), 
+    .B1(\byte_sig[0] ), .A1(n738), .D0(n666), .C0(n738), .B0(\note_sig[1] ), 
+    .A0(\byte_sig[1] ), .CLK(outclk), .Q0(\note_sig[1] ), .Q1(\note_sig[0] ), 
+    .F0(n3182), .F1(n3122));
+  SLICE_27 SLICE_27( .DI1(n3178), .DI0(n3180), .D1(\note_sig[3] ), .C1(n666), 
+    .B1(\byte_sig[3] ), .A1(n738), .D0(n666), .C0(\byte_sig[2] ), 
+    .B0(\note_sig[2] ), .A0(n738), .CLK(outclk), .Q0(\note_sig[2] ), 
+    .Q1(\note_sig[3] ), .F0(n3180), .F1(n3178));
+  SLICE_29 SLICE_29( .DI1(n3174), .DI0(n3176), .D1(n738), .C1(\note_sig[5] ), 
+    .B1(\byte_sig[5] ), .A1(n666), .D0(\byte_sig[4] ), .C0(\note_sig[4] ), 
+    .B0(n666), .A0(n738), .CLK(outclk), .Q0(\note_sig[4] ), .Q1(\note_sig[5] ), 
+    .F0(n3176), .F1(n3174));
+  SLICE_37 SLICE_37( .DI1(\midi_in/n80[2] ), .DI0(\midi_in/n80[1] ), 
+    .D1(\midi_in/bit_index[2] ), .C1(\midi_in/bit_index[1] ), 
+    .B1(\bit_index[0] ), .B0(\midi_in/bit_index[1] ), .A0(\bit_index[0] ), 
+    .CE(n650), .LSR(n799), .CLK(outclk), .Q0(\midi_in/bit_index[1] ), 
+    .Q1(\midi_in/bit_index[2] ), .F0(\midi_in/n80[1] ), .F1(\midi_in/n80[2] ));
+  SLICE_38 SLICE_38( .DI1(n843), .DI0(n883), .D1(data), .C1(n616), 
+    .B1(\byte_sig[1] ), .A1(n4), .D0(\byte_sig[0] ), .C0(n621), .B0(n4), 
+    .A0(data), .CLK(outclk), .Q0(\byte_sig[0] ), .Q1(\byte_sig[1] ), .F0(n883), 
+    .F1(n843));
+  SLICE_41 SLICE_41( .DI1(\midi_in/tracker_1__N_9[0] ), 
+    .DI0(\midi_in/tracker_1__N_9[1] ), .D1(\tracker[1] ), .C1(\midi_in/n1 ), 
+    .A1(\midi_in/n2 ), .D0(\midi_in/tracker_1__N_47[1] ), .C0(\tracker[0] ), 
+    .B0(\tracker[1] ), .A0(\midi_in/n19 ), .CLK(outclk), .Q0(\tracker[1] ), 
+    .Q1(\tracker[0] ), .F0(\midi_in/tracker_1__N_9[1] ), 
+    .F1(\midi_in/tracker_1__N_9[0] ));
+  SLICE_42 SLICE_42( .DI1(\midi_in/n172[0] ), .DI0(\midi_in/n172[1] ), 
+    .C1(\midi_in/n57[0] ), .B1(n171), .B0(\midi_in/n57[1] ), .A0(n171), 
+    .CE(\midi_in/n657 ), .LSR(\midi_in/n778 ), .CLK(outclk), 
+    .Q0(\clock_counter[1] ), .Q1(\clock_counter[0] ), .F0(\midi_in/n172[1] ), 
+    .F1(\midi_in/n172[0] ));
+  SLICE_44 SLICE_44( .DI1(\midi_in/n172[6] ), .DI0(\midi_in/n172[5] ), 
+    .C1(\midi_in/n57[6] ), .B1(n171), .C0(\midi_in/n57[5] ), .A0(n171), 
+    .CE(\midi_in/n657 ), .LSR(\midi_in/n778 ), .CLK(outclk), 
+    .Q0(\midi_in/clock_counter[5] ), .Q1(\midi_in/clock_counter[6] ), 
+    .F0(\midi_in/n172[5] ), .F1(\midi_in/n172[6] ));
+  SLICE_46 SLICE_46( .DI1(\midi_in/n172[8] ), .DI0(\midi_in/n172[7] ), 
+    .B1(n171), .A1(\midi_in/n57[8] ), .D0(\midi_in/n57[7] ), .A0(n171), 
+    .CE(\midi_in/n657 ), .LSR(\midi_in/n778 ), .CLK(outclk), 
+    .Q0(\midi_in/clock_counter[7] ), .Q1(\midi_in/clock_counter[8] ), 
+    .F0(\midi_in/n172[7] ), .F1(\midi_in/n172[8] ));
+  SLICE_48 SLICE_48( .DI1(n848), .DI0(n849), .D1(data), .C1(n621), 
+    .B1(\byte_sig[6] ), .A1(n1398), .D0(n1398), .C0(data), .B0(\byte_sig[7] ), 
+    .A0(n616), .CLK(outclk), .Q0(\byte_sig[7] ), .Q1(\byte_sig[6] ), .F0(n849), 
+    .F1(n848));
+  SLICE_50 SLICE_50( .DI1(n846), .DI0(n847), .D1(data), .C1(\byte_sig[4] ), 
+    .B1(n621), .A1(n4_adj_212), .D0(n4_adj_212), .C0(data), .B0(n616), 
+    .A0(\byte_sig[5] ), .CLK(outclk), .Q0(\byte_sig[5] ), .Q1(\byte_sig[4] ), 
+    .F0(n847), .F1(n846));
+  SLICE_52 SLICE_52( .DI1(n844), .DI0(n845), .D1(n4_adj_213), .C1(n621), 
+    .B1(data), .A1(\byte_sig[2] ), .D0(data), .C0(n4_adj_213), 
+    .B0(\byte_sig[3] ), .A0(n616), .CLK(outclk), .Q0(\byte_sig[3] ), 
+    .Q1(\byte_sig[2] ), .F0(n845), .F1(n844));
+  SLICE_57 SLICE_57( .D1(\note_sig[0] ), .C1(\sound_out/get_frequency/n59 ), 
+    .B1(\sound_out/get_frequency/n4 ), .A1(\note_sig[1] ), .D0(\note_sig[3] ), 
+    .C0(\note_sig[0] ), .B0(\note_sig[1] ), .A0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n59 ), .F1(\sound_out/get_frequency/n3492 ));
+  SLICE_59 SLICE_59( .D1(\sound_out/get_frequency/n1429 ), 
+    .C1(\sound_out/get_frequency/n4 ), .B1(\note_sig[6] ), .A1(\note_sig[2] ), 
+    .D0(\note_sig[4] ), .C0(\note_sig[5] ), .F0(\sound_out/get_frequency/n4 ), 
+    .F1(\sound_out/get_frequency/n65 ));
+  SLICE_60 SLICE_60( .D1(\note_sig[4] ), .C1(\note_sig[3] ), 
+    .B1(\note_sig[5] ), .D0(\note_sig[3] ), .C0(\note_sig[4] ), 
+    .B0(\note_sig[2] ), .A0(\note_sig[5] ), 
+    .F0(\sound_out/get_frequency/n1429 ), .F1(\sound_out/n6_adj_208 ));
+  SLICE_61 SLICE_61( .D1(\note_sig[3] ), 
+    .C1(\sound_out/get_frequency/n4_adj_203 ), .B1(\note_sig[1] ), 
+    .A1(\note_sig[2] ), .D0(\note_sig[6] ), .C0(\note_sig[4] ), 
+    .F0(\sound_out/get_frequency/n4_adj_203 ), 
+    .F1(\sound_out/get_frequency/n3481 ));
+  SLICE_62 SLICE_62( .D1(\note_sig[1] ), .C1(\sound_out/get_frequency/n613 ), 
+    .B1(\sound_out/get_frequency/n3481 ), .A1(\note_sig[5] ), 
+    .D0(\note_sig[6] ), .C0(\note_sig[4] ), .B0(\note_sig[2] ), 
+    .A0(\note_sig[3] ), .F0(\sound_out/get_frequency/n613 ), 
+    .F1(\sound_out/frequency[16] ));
+  SLICE_63 SLICE_63( .D1(n3436), .C1(n3434), .B1(\tracker[1] ), .A1(n3267), 
+    .D0(\tracker[0] ), .C0(n3347), .B0(n3267), .A0(n626), .F0(n3434), 
+    .F1(n171));
+  SLICE_65 SLICE_65( .D1(\tracker[1] ), .C1(\midi_in/tracker_1__N_47[1] ), 
+    .B1(\midi_in/n19 ), .A1(\tracker[0] ), .D0(n3271), .C0(\midi_in/n583 ), 
+    .F0(\midi_in/tracker_1__N_47[1] ), .F1(n650));
+  SLICE_66 SLICE_66( .D1(\midi_in/clock_counter[3] ), .C1(\tracker[1] ), 
+    .B1(\midi_in/clock_counter[2] ), .A1(\tracker[0] ), .D0(\midi_in/n1427 ), 
+    .C0(n650), .A0(\tracker[1] ), .F0(n799), .F1(\midi_in/n4_c ));
+  SLICE_67 SLICE_67( .D1(\sound_out/counter[10] ), .C1(\sound_out/n20 ), 
+    .A1(\sound_out/frequency[10] ), .D0(\sound_out/counter[9] ), 
+    .C0(\sound_out/n18 ), .B0(\sound_out/frequency[9] ), .F0(\sound_out/n20 ), 
+    .F1(\sound_out/n22 ));
+  SLICE_68 SLICE_68( .D1(\note_sig[3] ), .C1(\sound_out/get_frequency/n3444 ), 
+    .B1(\note_sig[5] ), .A1(\sound_out/get_frequency/n3443 ), 
+    .D0(\note_sig[2] ), .C0(\note_sig[6] ), .B0(\note_sig[0] ), 
+    .A0(\note_sig[4] ), .F0(\sound_out/get_frequency/n3444 ), 
+    .F1(\sound_out/frequency[10] ));
+  SLICE_70 SLICE_70( .D1(\note_sig[6] ), .B1(\note_sig[1] ), 
+    .A1(\note_sig[2] ), .D0(\note_sig[2] ), 
+    .C0(\sound_out/get_frequency/n3441 ), .B0(\sound_out/get_frequency/n3439 ), 
+    .A0(\note_sig[6] ), .F0(\sound_out/frequency[9] ), .F1(\sound_out/n3350 ));
+  SLICE_71 SLICE_71( .C1(\sound_out/n16 ), .B1(\sound_out/frequency[8] ), 
+    .A1(\sound_out/counter[8] ), .D0(\sound_out/counter[7] ), 
+    .C0(\sound_out/n14 ), .A0(\sound_out/frequency[7] ), .F0(\sound_out/n16 ), 
+    .F1(\sound_out/n18 ));
+  SLICE_72 SLICE_72( .D1(\note_sig[6] ), .C1(\note_sig[4] ), 
+    .B1(\note_sig[5] ), .D0(\note_sig[5] ), 
+    .C0(\sound_out/get_frequency/n3505 ), .B0(\sound_out/get_frequency/n6_c ), 
+    .A0(\sound_out/get_frequency/n3788 ), .F0(\sound_out/frequency[8] ), 
+    .F1(\sound_out/get_frequency/n4_adj_202 ));
+  SLICE_74 SLICE_74( .D1(\sound_out/get_frequency/n4 ), 
+    .C1(\sound_out/get_frequency/n3432 ), .B1(\sound_out/get_frequency/n3429 ), 
+    .A1(\note_sig[6] ), .D0(\note_sig[3] ), .C0(\note_sig[0] ), 
+    .B0(\note_sig[2] ), .A0(\note_sig[1] ), 
+    .F0(\sound_out/get_frequency/n3432 ), .F1(\sound_out/frequency[7] ));
+  SLICE_75 SLICE_75( .D1(\sound_out/n2861 ), .C1(\sound_out/n12 ), 
+    .B1(\sound_out/counter[6] ), .A1(\sound_out/n74 ), .C0(\sound_out/n10 ), 
+    .B0(\sound_out/counter[5] ), .A0(\sound_out/frequency[5] ), 
+    .F0(\sound_out/n12 ), .F1(\sound_out/n14 ));
+  SLICE_76 SLICE_76( .D1(\sound_out/get_frequency/n613 ), 
+    .C1(\sound_out/get_frequency/n22 ), .B1(\sound_out/get_frequency/n3499 ), 
+    .A1(\note_sig[5] ), .D0(\note_sig[0] ), .A0(\note_sig[1] ), 
+    .F0(\sound_out/get_frequency/n22 ), .F1(\sound_out/n74 ));
+  SLICE_78 SLICE_78( .D1(\sound_out/get_frequency/n4 ), 
+    .C1(\sound_out/get_frequency/n1441 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n3497 ), .D0(\note_sig[3] ), 
+    .C0(\sound_out/get_frequency/n1408 ), .B0(\sound_out/get_frequency/n1378 ), 
+    .A0(\sound_out/get_frequency/n1425 ), .F0(\sound_out/get_frequency/n1441 ), 
+    .F1(\sound_out/frequency[5] ));
+  SLICE_79 SLICE_79( .D1(\sound_out/frequency[4] ), .C1(\sound_out/n8 ), 
+    .B1(\sound_out/counter[4] ), .D0(\sound_out/frequency[3] ), 
+    .C0(\sound_out/n6 ), .A0(\sound_out/counter[3] ), .F0(\sound_out/n8 ), 
+    .F1(\sound_out/n10 ));
+  SLICE_80 SLICE_80( .D1(\note_sig[6] ), .C1(\sound_out/get_frequency/n3494 ), 
+    .B1(\sound_out/get_frequency/n3492 ), .A1(\sound_out/get_frequency/n3839 ), 
+    .C0(\note_sig[2] ), .B0(\note_sig[1] ), .A0(\note_sig[0] ), 
+    .F0(\sound_out/get_frequency/n3494 ), .F1(\sound_out/frequency[4] ));
+  SLICE_82 SLICE_82( .D1(\sound_out/get_frequency/n3486 ), 
+    .C1(\sound_out/get_frequency/n3489 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n4 ), .D0(\note_sig[1] ), .C0(\note_sig[3] ), 
+    .B0(\note_sig[2] ), .A0(\note_sig[0] ), 
+    .F0(\sound_out/get_frequency/n3489 ), .F1(\sound_out/frequency[3] ));
+  SLICE_83 SLICE_83( .D1(\sound_out/n2857 ), .C1(\sound_out/n4 ), 
+    .B1(\sound_out/n40 ), .A1(\sound_out/counter[2] ), 
+    .D0(\sound_out/frequency[0] ), .C0(\sound_out/frequency[1] ), 
+    .B0(\sound_out/counter[0] ), .A0(\sound_out/counter[1] ), 
+    .F0(\sound_out/n4 ), .F1(\sound_out/n6 ));
+  SLICE_84 SLICE_84( .D1(\note_sig[3] ), .C1(\sound_out/get_frequency/n3483 ), 
+    .B1(\sound_out/get_frequency/n4_adj_202 ), 
+    .A1(\sound_out/get_frequency/n36 ), .D0(\note_sig[1] ), .C0(\note_sig[0] ), 
+    .B0(\note_sig[2] ), .F0(\sound_out/get_frequency/n3483 ), 
+    .F1(\sound_out/n2857 ));
+  SLICE_86 SLICE_86( .D1(\sound_out/get_frequency/n3471 ), 
+    .C1(\sound_out/get_frequency/n40_c ), .B1(\sound_out/get_frequency/n4 ), 
+    .A1(\note_sig[6] ), .D0(\note_sig[3] ), .C0(\note_sig[2] ), 
+    .B0(\note_sig[1] ), .A0(\note_sig[0] ), 
+    .F0(\sound_out/get_frequency/n40_c ), .F1(\sound_out/frequency[0] ));
+  SLICE_87 SLICE_87( .D1(\sound_out/counter[18] ), 
+    .C1(\sound_out/n22_adj_205 ), .B1(\sound_out/counter[23] ), 
+    .A1(\sound_out/n16_adj_206 ), .D0(\sound_out/counter[21] ), 
+    .C0(\sound_out/counter[29] ), .B0(\sound_out/counter[22] ), 
+    .A0(\sound_out/counter[30] ), .F0(\sound_out/n22_adj_205 ), 
+    .F1(\sound_out/n24 ));
+  SLICE_89 SLICE_89( .DI1(n3194), .D1(n3265), .C1(n738), .B1(\status_byte[4] ), 
+    .A1(on_off_sig), .C0(\sound_out/sample_N_171 ), .B0(on_off_sig), 
+    .CLK(outclk), .Q1(on_off_sig), .F0(\sound_out/n776 ), .F1(n3194));
+  SLICE_90 SLICE_90( .D1(\sound_out/n24 ), .C1(\sound_out/n36 ), 
+    .B1(\sound_out/counter[31] ), .A1(\sound_out/n23 ), .D0(\sound_out/n3350 ), 
+    .C0(\sound_out/n34 ), .B0(\sound_out/n6_adj_208 ), 
+    .A0(\sound_out/counter[17] ), .F0(\sound_out/n36 ), 
+    .F1(\sound_out/sample_N_171 ));
+  SLICE_91 SLICE_91( .D1(\sound_out/counter[28] ), 
+    .C1(\sound_out/n14_adj_207 ), .B1(\sound_out/counter[20] ), 
+    .A1(\sound_out/counter[24] ), .C0(\sound_out/counter[19] ), 
+    .B0(\sound_out/counter[27] ), .F0(\sound_out/n14_adj_207 ), 
+    .F1(\sound_out/n23 ));
+  SLICE_95 SLICE_95( .C1(\sound_out/n32 ), .B1(\sound_out/frequency[16] ), 
+    .A1(\sound_out/counter[16] ), .D0(\sound_out/frequency[15] ), 
+    .C0(\sound_out/n30 ), .A0(\sound_out/counter[15] ), .F0(\sound_out/n32 ), 
+    .F1(\sound_out/n34 ));
+  SLICE_97 SLICE_97( .D1(\sound_out/frequency[14] ), .C1(\sound_out/n28 ), 
+    .B1(\sound_out/counter[14] ), .C0(\sound_out/n26 ), 
+    .B0(\sound_out/counter[13] ), .A0(\sound_out/frequency[13] ), 
+    .F0(\sound_out/n28 ), .F1(\sound_out/n30 ));
+  SLICE_98 SLICE_98( .D1(\sound_out/get_frequency/n4 ), 
+    .C1(\sound_out/get_frequency/n38 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n3468 ), .D0(\note_sig[3] ), 
+    .C0(\note_sig[0] ), .B0(\note_sig[1] ), .A0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n38 ), .F1(\sound_out/frequency[14] ));
+  SLICE_100 SLICE_100( .D1(\sound_out/get_frequency/n3458 ), 
+    .C1(\sound_out/get_frequency/n3459 ), .B1(\sound_out/get_frequency/n4 ), 
+    .A1(\note_sig[6] ), .D0(\note_sig[1] ), .C0(\note_sig[3] ), 
+    .B0(\note_sig[2] ), .A0(\note_sig[0] ), 
+    .F0(\sound_out/get_frequency/n3459 ), .F1(\sound_out/frequency[13] ));
+  SLICE_101 SLICE_101( .C1(\sound_out/n24_adj_209 ), 
+    .B1(\sound_out/frequency[12] ), .A1(\sound_out/counter[12] ), 
+    .C0(\sound_out/n22 ), .B0(\sound_out/counter[11] ), 
+    .A0(\sound_out/frequency[11] ), .F0(\sound_out/n24_adj_209 ), 
+    .F1(\sound_out/n26 ));
+  SLICE_102 SLICE_102( .D1(\sound_out/get_frequency/n4 ), 
+    .C1(\sound_out/get_frequency/n1435 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n3454 ), .D0(\sound_out/get_frequency/n1425 ), 
+    .C0(\sound_out/get_frequency/n3800 ), .B0(\sound_out/get_frequency/n1378 ), 
+    .A0(\note_sig[3] ), .F0(\sound_out/get_frequency/n1435 ), 
+    .F1(\sound_out/frequency[12] ));
+  SLICE_104 SLICE_104( .D1(\sound_out/get_frequency/n3448 ), 
+    .C1(\sound_out/get_frequency/n3446 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n4 ), .D0(\note_sig[2] ), .C0(\note_sig[1] ), 
+    .B0(\note_sig[3] ), .A0(\sound_out/get_frequency/n1378 ), 
+    .F0(\sound_out/get_frequency/n3446 ), .F1(\sound_out/frequency[11] ));
+  SLICE_105 SLICE_105( .D1(\sound_out/get_frequency/n1378 ), 
+    .C1(\sound_out/get_frequency/n50 ), .B1(\sound_out/get_frequency/n1425 ), 
+    .A1(\note_sig[3] ), .D0(\note_sig[1] ), .B0(\note_sig[2] ), 
+    .A0(\note_sig[0] ), .F0(\sound_out/get_frequency/n50 ), 
+    .F1(\sound_out/get_frequency/n3458 ));
+  SLICE_107 SLICE_107( .D1(\note_sig[1] ), .C1(\sound_out/get_frequency/n52 ), 
+    .B1(\note_sig[0] ), .A1(\note_sig[2] ), .D0(\note_sig[3] ), 
+    .C0(\note_sig[4] ), .B0(\note_sig[5] ), .A0(\note_sig[6] ), 
+    .F0(\sound_out/get_frequency/n52 ), .F1(\sound_out/n2861 ));
+  SLICE_109 SLICE_109( .D1(\sound_out/get_frequency/n3839 ), 
+    .C1(\sound_out/get_frequency/n3484 ), .B1(\note_sig[6] ), 
+    .A1(\sound_out/get_frequency/n30 ), .D0(\note_sig[5] ), .C0(\note_sig[1] ), 
+    .B0(\note_sig[4] ), .F0(\sound_out/get_frequency/n3484 ), 
+    .F1(\sound_out/n40 ));
+  SLICE_110 SLICE_110( .D1(\note_sig[0] ), .B1(\note_sig[2] ), 
+    .C0(\note_sig[2] ), .A0(\note_sig[0] ), .F0(\sound_out/get_frequency/n30 ), 
+    .F1(\sound_out/get_frequency/n3800 ));
+  SLICE_111 SLICE_111( .D1(\sound_out/get_frequency/n65 ), 
+    .C1(\sound_out/get_frequency/n102 ), .B1(\note_sig[1] ), 
+    .A1(\note_sig[0] ), .D0(\sound_out/get_frequency/n3463 ), 
+    .C0(\sound_out/get_frequency/n71 ), .B0(\sound_out/get_frequency/n6_c ), 
+    .A0(\note_sig[5] ), .F0(\sound_out/get_frequency/n102 ), 
+    .F1(\sound_out/frequency[1] ));
+  SLICE_113 SLICE_113( .D1(\sound_out/get_frequency/n1378 ), 
+    .C1(\sound_out/get_frequency/n36 ), .B1(\note_sig[3] ), 
+    .A1(\sound_out/get_frequency/n1425 ), .D0(\note_sig[1] ), 
+    .C0(\note_sig[0] ), .B0(\note_sig[2] ), .F0(\sound_out/get_frequency/n36 ), 
+    .F1(\sound_out/get_frequency/n3486 ));
+  SLICE_115 SLICE_115( .D1(\sound_out/get_frequency/n77 ), 
+    .C1(\sound_out/get_frequency/n1425 ), .A1(\note_sig[3] ), 
+    .D0(\note_sig[2] ), .C0(\note_sig[0] ), .B0(\note_sig[1] ), 
+    .F0(\sound_out/get_frequency/n1425 ), .F1(\sound_out/get_frequency/n71 ));
+  SLICE_117 SLICE_117( .D1(\sound_out/get_frequency/n4_adj_203 ), 
+    .C1(\sound_out/get_frequency/n3464 ), .B1(\note_sig[3] ), 
+    .A1(\sound_out/get_frequency/n3465 ), .D0(\note_sig[1] ), 
+    .C0(\note_sig[0] ), .B0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n3464 ), .F1(\sound_out/get_frequency/n3463 ));
+  SLICE_119 SLICE_119( .D1(\note_sig[4] ), .C1(\sound_out/get_frequency/n33 ), 
+    .B1(\note_sig[5] ), .D0(\note_sig[2] ), .C0(\note_sig[3] ), 
+    .B0(\note_sig[0] ), .A0(\note_sig[1] ), .F0(\sound_out/get_frequency/n33 ), 
+    .F1(\sound_out/get_frequency/n3475 ));
+  SLICE_121 SLICE_121( .D1(\note_sig[2] ), 
+    .C1(\sound_out/get_frequency/n3839 ), .B1(\note_sig[0] ), 
+    .A1(\note_sig[1] ), .C0(\note_sig[5] ), .B0(\note_sig[4] ), 
+    .A0(\note_sig[3] ), .F0(\sound_out/get_frequency/n3839 ), 
+    .F1(\sound_out/get_frequency/n3468 ));
+  SLICE_123 SLICE_123( .D1(\note_sig[3] ), .C1(\sound_out/get_frequency/n43 ), 
+    .B1(\sound_out/get_frequency/n1425 ), .A1(\sound_out/get_frequency/n1378 ), 
+    .D0(\note_sig[1] ), .C0(\note_sig[0] ), .A0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n43 ), .F1(\sound_out/get_frequency/n3471 ));
+  SLICE_124 SLICE_124( .D1(\note_sig[1] ), 
+    .C1(\sound_out/get_frequency/n1378 ), .B1(\note_sig[3] ), 
+    .A1(\note_sig[0] ), .D0(\note_sig[4] ), .B0(\note_sig[5] ), 
+    .F0(\sound_out/get_frequency/n1378 ), .F1(\sound_out/get_frequency/n3441 ));
+  SLICE_127 SLICE_127( .D1(\sound_out/get_frequency/n35 ), 
+    .C1(\sound_out/get_frequency/n3836 ), 
+    .B1(\sound_out/get_frequency/n4_adj_203 ), .A1(\note_sig[2] ), 
+    .D0(\note_sig[0] ), .B0(\note_sig[1] ), .A0(\note_sig[3] ), 
+    .F0(\sound_out/get_frequency/n3836 ), .F1(\sound_out/get_frequency/n3443 ));
+  SLICE_128 SLICE_128( .D0(\note_sig[0] ), .B0(\note_sig[1] ), 
+    .A0(\note_sig[3] ), .F0(\sound_out/get_frequency/n35 ));
+  SLICE_129 SLICE_129( .D1(\note_sig[3] ), 
+    .C1(\sound_out/get_frequency/n3785 ), .B1(\note_sig[1] ), 
+    .A1(\sound_out/get_frequency/n4 ), .D0(\note_sig[0] ), .B0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n3785 ), .F1(\sound_out/get_frequency/n3439 ));
+  SLICE_131 SLICE_131( .D1(\sound_out/get_frequency/n4_adj_203 ), 
+    .C1(\sound_out/get_frequency/n1368 ), .B1(\note_sig[3] ), 
+    .A1(\note_sig[1] ), .C0(\note_sig[0] ), .B0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n1368 ), .F1(\sound_out/get_frequency/n3505 ));
+  SLICE_133 SLICE_133( .D1(\sound_out/get_frequency/n1378 ), 
+    .C1(\sound_out/get_frequency/n3431 ), .B1(\note_sig[3] ), 
+    .A1(\note_sig[2] ), .C0(\note_sig[0] ), .A0(\note_sig[1] ), 
+    .F0(\sound_out/get_frequency/n3431 ), .F1(\sound_out/get_frequency/n3429 ));
+  SLICE_135 SLICE_135( .D1(\note_sig[6] ), 
+    .C1(\sound_out/get_frequency/n3500 ), .B1(\note_sig[4] ), 
+    .D0(\note_sig[2] ), .C0(\note_sig[3] ), .B0(\note_sig[0] ), 
+    .A0(\note_sig[1] ), .F0(\sound_out/get_frequency/n3500 ), 
+    .F1(\sound_out/get_frequency/n3499 ));
+  SLICE_138 SLICE_138( .D1(\note_sig[0] ), .C1(\note_sig[1] ), 
+    .A1(\note_sig[2] ), .D0(\note_sig[1] ), .C0(\note_sig[0] ), 
+    .B0(\note_sig[2] ), .F0(\sound_out/get_frequency/n1408 ), 
+    .F1(\sound_out/get_frequency/n3465 ));
+  SLICE_139 SLICE_139( .D1(\note_sig[6] ), 
+    .C1(\sound_out/get_frequency/n3788 ), .B1(\sound_out/get_frequency/n1378 ), 
+    .A1(\sound_out/get_frequency/n3475 ), .D0(\note_sig[2] ), 
+    .C0(\note_sig[1] ), .B0(\note_sig[0] ), .A0(\note_sig[3] ), 
+    .F0(\sound_out/get_frequency/n3788 ), .F1(\sound_out/frequency[15] ));
+  SLICE_141 SLICE_141( .D1(\clock_counter[4] ), .C1(\clock_counter[9] ), 
+    .B1(\clock_counter[0] ), .A1(\clock_counter[1] ), .D0(\tracker[0] ), 
+    .C0(n626), .B0(n3271), .A0(n3347), .F0(n3436), .F1(n3347));
+  SLICE_142 SLICE_142( .DI1(\midi_in/n172[4] ), .D1(n171), 
+    .B1(\midi_in/n57[4] ), .D0(\clock_counter[0] ), .C0(\clock_counter[1] ), 
+    .B0(\clock_counter[4] ), .A0(\clock_counter[9] ), .CE(\midi_in/n657 ), 
+    .LSR(\midi_in/n778 ), .CLK(outclk), .Q1(\clock_counter[4] ), .F0(n3271), 
+    .F1(\midi_in/n172[4] ));
+  SLICE_143 SLICE_143( .D1(\midi_in/n1418 ), .C1(n626), 
+    .B1(\midi_in/clock_counter[5] ), .A1(\midi_in/clock_counter[6] ), 
+    .C0(\midi_in/clock_counter[2] ), .A0(\midi_in/clock_counter[3] ), 
+    .F0(n626), .F1(\midi_in/n583 ));
+  SLICE_144 SLICE_144( .D1(n171), .C1(\midi_in/n657 ), .B1(\midi_in/n185 ), 
+    .D0(n3271), .C0(\tracker[1] ), .B0(\midi_in/n583 ), .A0(\tracker[0] ), 
+    .F0(\midi_in/n657 ), .F1(\midi_in/n783 ));
+  SLICE_145 SLICE_145( .DI1(n886), .D1(\bit_index[0] ), .C1(\midi_in/n1427 ), 
+    .B1(n650), .A1(\tracker[1] ), .D0(\midi_in/bit_index[1] ), 
+    .B0(\midi_in/bit_index[2] ), .A0(\bit_index[0] ), .CLK(outclk), 
+    .Q1(\bit_index[0] ), .F0(\midi_in/n1427 ), .F1(n886));
+  SLICE_146 SLICE_146( .D0(\midi_in/n1427 ), .C0(\tracker[0] ), 
+    .B0(\midi_in/tracker_1__N_47[1] ), .A0(\midi_in/n19 ), .F0(\midi_in/n2 ));
+  SLICE_147 SLICE_147( .C0(\midi_in/n185 ), .A0(\midi_in/n657 ), 
+    .F0(\midi_in/n778 ));
+  SLICE_148 SLICE_148( .D1(\midi_in/clock_counter[8] ), .C1(\midi_in/n8 ), 
+    .B1(\midi_in/n4_c ), .A1(\midi_in/n634 ), .D0(\clock_counter[9] ), 
+    .C0(\midi_in/clock_counter[5] ), .B0(\midi_in/clock_counter[6] ), 
+    .A0(\midi_in/clock_counter[7] ), .F0(\midi_in/n8 ), .F1(\midi_in/n185 ));
+  SLICE_149 SLICE_149( .DI1(\data/sig_000/FeedThruLUT ), .C1(data), 
+    .D0(\tracker[0] ), .C0(\midi_in/n19 ), .B0(\midi_in/data_r ), 
+    .A0(\midi_in/tracker_1__N_47[1] ), .CLK(outclk), .Q1(\midi_in/data_r ), 
+    .F0(\midi_in/n1 ), .F1(\data/sig_000/FeedThruLUT ));
+  SLICE_150 SLICE_150( .D1(\clock_counter[9] ), .C1(\midi_in/n634 ), 
+    .A1(\midi_in/n583 ), .D0(\clock_counter[1] ), .B0(\clock_counter[4] ), 
+    .A0(\clock_counter[0] ), .F0(\midi_in/n634 ), .F1(\midi_in/n19 ));
+  SLICE_156 SLICE_156( .D1(\note_sig[0] ), .C1(\note_sig[1] ), 
+    .B1(\note_sig[2] ), .D0(\note_sig[3] ), .C0(\note_sig[0] ), 
+    .B0(\note_sig[1] ), .A0(\note_sig[2] ), 
+    .F0(\sound_out/get_frequency/n3497 ), .F1(\sound_out/get_frequency/n77 ));
+  SLICE_157 SLICE_157( .D1(\note_sig[2] ), .C1(\note_sig[1] ), 
+    .B1(\note_sig[0] ), .A1(\note_sig[3] ), .D0(\note_sig[3] ), 
+    .C0(\note_sig[2] ), .B0(\note_sig[1] ), .A0(\note_sig[0] ), 
+    .F0(\sound_out/get_frequency/n3454 ), .F1(\sound_out/get_frequency/n3448 ));
+  SLICE_159 SLICE_159( .D1(\tracker_adj_216[1] ), .C1(\tracker_adj_216[0] ), 
+    .A1(valid_sig), .D0(valid_sig), .C0(\byte_sig[7] ), 
+    .B0(\tracker_adj_216[0] ), .A0(\tracker_adj_216[1] ), .F0(n3265), 
+    .F1(n3264));
+  SLICE_160 SLICE_160( .DI1(\midi_parse/n1 ), .D1(\tracker_adj_216[0] ), 
+    .B1(\byte_sig[7] ), .D0(\tracker_adj_216[1] ), .C0(\byte_sig[7] ), 
+    .B0(valid_sig), .A0(\tracker_adj_216[0] ), .CE(\midi_parse/n647 ), 
+    .LSR(\midi_parse/n3196 ), .CLK(outclk), .Q1(\tracker_adj_216[0] ), 
+    .F0(\midi_parse/n647 ), .F1(\midi_parse/n1 ));
+  SLICE_161 SLICE_161( .D1(\tracker[0] ), .C1(\tracker[1] ), 
+    .B1(\midi_in/n19 ), .A1(\bit_index[0] ), .D0(\bit_index[0] ), 
+    .C0(\midi_in/n19 ), .B0(\tracker[1] ), .A0(\tracker[0] ), .F0(n616), 
+    .F1(n621));
+  SLICE_174 SLICE_174( .DI1(n3188), .D1(\tracker_adj_216[1] ), .C1(valid_sig), 
+    .B1(\byte_sig[7] ), .A1(\tracker_adj_216[0] ), .D0(\tracker_adj_216[0] ), 
+    .C0(\byte_sig[7] ), .B0(valid_sig), .A0(\tracker_adj_216[1] ), 
+    .CLK(outclk), .Q1(\tracker_adj_216[1] ), .F0(n666), .F1(n3188));
+  SLICE_178 SLICE_178( .D1(\midi_in/clock_counter[7] ), 
+    .B1(\midi_in/clock_counter[8] ), .D0(\midi_in/clock_counter[6] ), 
+    .C0(\midi_in/clock_counter[8] ), .B0(\midi_in/clock_counter[5] ), 
+    .A0(\midi_in/clock_counter[7] ), .F0(n3267), .F1(\midi_in/n1418 ));
+  SLICE_181 SLICE_181( .B0(\tracker_adj_216[0] ), .A0(\tracker_adj_216[1] ), 
+    .F0(n738));
+  SLICE_183 SLICE_183( .B1(\midi_in/bit_index[2] ), 
+    .A1(\midi_in/bit_index[1] ), .D0(\midi_in/bit_index[1] ), 
+    .C0(\midi_in/bit_index[2] ), .F0(n1398), .F1(n4_adj_213));
+  SLICE_184 SLICE_184( .DI1(n3162), .D1(n3264), .C1(n3511), .B1(\byte_sig[4] ), 
+    .A1(\status_byte[4] ), .C0(\byte_sig[7] ), .A0(\tracker_adj_216[1] ), 
+    .CLK(outclk), .Q1(\status_byte[4] ), .F0(n3511), .F1(n3162));
+  SLICE_187 SLICE_187( .DI1(\sound_out/sample_N_170 ), 
+    .D1(\sound_out/sample_N_171 ), .B1(sample_c), .D0(\sound_out/counter[26] ), 
+    .B0(\sound_out/counter[25] ), .CE(on_off_sig), .CLK(inputclk), 
+    .Q1(sample_c), .F0(\sound_out/n16_adj_206 ), .F1(\sound_out/sample_N_170 ));
+  SLICE_192 SLICE_192( .DI1(n3172), .D1(\note_sig[6] ), .C1(n666), 
+    .B1(\byte_sig[6] ), .A1(n738), .C0(\note_sig[6] ), .A0(\note_sig[4] ), 
+    .CLK(outclk), .Q1(\note_sig[6] ), .F0(\sound_out/get_frequency/n6_c ), 
+    .F1(n3172));
+  SLICE_194 SLICE_194( .DI1(\midi_in/n836 ), .D1(\midi_in/tracker_1__N_47[1] ), 
+    .C1(\tracker[0] ), .B1(\tracker[1] ), .A1(valid_sig), 
+    .D0(\tracker_adj_216[1] ), .B0(valid_sig), .CLK(outclk), .Q1(valid_sig), 
+    .F0(\midi_parse/n3196 ), .F1(\midi_in/n836 ));
+  SLICE_196 SLICE_196( .C1(\midi_in/bit_index[1] ), 
+    .A1(\midi_in/bit_index[2] ), .D0(\midi_in/bit_index[2] ), 
+    .B0(\midi_in/bit_index[1] ), .F0(n4), .F1(n4_adj_212));
+  SLICE_199 SLICE_199( .F0(VCC_net));
+  midi_in_data_60 \midi_in.data_60 ( .PADDI(serial_c), .INCLK(outclk), 
+    .DI0(data));
+  CLKSIG CLKSIG( .CLKHFPU(VCC_net), .CLKHFEN(VCC_net), .CLKHF(inputclk));
+  baud_sync_lscc_pll_inst_u_PLL_B \baud_sync.lscc_pll_inst.u_PLL_B ( 
+    .REFERENCECLK(inputclk), .FEEDBACK(\baud_sync/lscc_pll_inst/feedback_w ), 
+    .RESET_N(VCC_net), .INTFBOUT(\baud_sync/lscc_pll_inst/feedback_w ), 
+    .OUTGLOBAL(outclk));
+  serial serial_I( .PADDI(serial_c), .serial(serial));
+  sample sample_I( .PADDO(sample_c), .sample(sample));
+endmodule
+
+module SLICE_0 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_31 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i29 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i30 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module fa2 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI0, CI1, output S0, S1, 
+    CO0, CO1 );
+
+  FA2 inst1( .A0(A0), .B0(B0), .C0(C0), .D0(D0), .CI0(CI0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .CI1(CI1), .CO0(CO0), .CO1(CO1), .S0(S0), .S1(S1));
+  defparam inst1.INIT0 = "0xc33c";
+  defparam inst1.INIT1 = "0xc33c";
+endmodule
+
+module gnd ( output PWR0 );
+
+  VLO INST1( .Z(PWR0));
+endmodule
+
+module ffsre2 ( input D0, SP, CK, LSR, output Q );
+
+  FD1P3XZ INST01( .D(D0), .SP(SP), .CK(CK), .SR(LSR), .Q(Q));
+  defparam INST01.REGSET = "RESET";
+  defparam INST01.SRMODE = "CE_OVER_LSR";
+endmodule
+
+module SLICE_1 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_29 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i27 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i28 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_2 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i9 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i10 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_3 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i1 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i2 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_4 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_27 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i25 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i26 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_5 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_25 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i23 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i24 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_6 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i7 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i8 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_7 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_23 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i21 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i22 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_8 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i5 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i6 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_9 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i3 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i4 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_10 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_21 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i19 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i20 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_11 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_19 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i17 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i18 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_12 ( input DI1, D1, C1, B1, CE, LSR, CLK, CIN1, output Q1, F1, 
+    COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), 
+    .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
+    .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \sound_out/counter_192__i0 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module SLICE_13 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_17 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i15 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i16 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_14 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_15 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i13 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i14 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_15 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_13 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i11 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \sound_out/counter_192__i12 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_16 ( input DI0, D1, D0, C0, CE, LSR, CLK, CIN0, CIN1, output Q0, 
+    F0, COUT0 );
+  wire   GNDI, DI0_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \sound_out/counter_192_add_4_33 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \sound_out/counter_192__i31 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_17 ( input DI0, D1, D0, B0, CE, LSR, CLK, CIN0, CIN1, output Q0, 
+    F0, COUT0 );
+  wire   GNDI, DI0_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \midi_in/add_45_add_4_11 ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/clock_counter_i0_i9 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_18 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, 
+    COUT0 );
+  wire   GNDI;
+
+  fa2 \midi_in/add_45_add_4_9 ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_19 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, 
+    COUT0 );
+  wire   GNDI;
+
+  fa2 \midi_in/add_45_add_4_7 ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_20 ( input DI0, D1, B1, D0, B0, CE, LSR, CLK, CIN0, CIN1, output 
+    Q0, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI0_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \midi_in/add_45_add_4_5 ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/clock_counter_i0_i3 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_21 ( input DI1, D1, B1, D0, B0, CE, LSR, CLK, CIN0, CIN1, output 
+    Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \midi_in/add_45_add_4_3 ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/clock_counter_i0_i2 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_22 ( input D1, C1, B1, CIN1, output F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \midi_in/add_45_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), .D0(VCCI), 
+    .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), .S0(), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_26 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut4 i11_4_lut_adj_12( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40001 i12_4_lut_adj_15( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_parse/data_byte_i0_i0 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/data_byte_i0_i1 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut4 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8F80") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40001 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_27 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut4 i11_4_lut_adj_17( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40002 i12_4_lut_adj_16( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_parse/data_byte_i0_i3 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/data_byte_i0_i2 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40002 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_29 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40003 i11_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40004 i11_4_lut_adj_18( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_parse/data_byte_i0_i5 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/data_byte_i0_i4 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40003 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xD850") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40004 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xB830") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_37 ( input DI1, DI0, D1, C1, B1, B0, A0, CE, LSR, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40005 \midi_in/i251_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40006 \midi_in/i244_2_lut ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \midi_in/bit_index_i2 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \midi_in/bit_index_i1 ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40005 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3FC0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40006 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x6666") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_38 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40007 i730_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40008 i770_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/byte_sig_i1 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/byte_sig_i0 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40007 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCDC8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40008 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFE02") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_41 ( input DI1, DI0, D1, C1, A1, D0, C0, B0, A0, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40009 \midi_in/tracker_1__I_0_69_Mux_0_i3_3_lut ( .A(A1), .B(GNDI), 
+    .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 \midi_in/tracker_1__I_0_69_Mux_1_i3_4_lut_4_lut ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/tracker_i0 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \midi_in/tracker_i1 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40009 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAAF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40010 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC2C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_42 ( input DI1, DI0, C1, B1, B0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40011 \midi_in/i1245_2_lut ( .A(GNDI), .B(B1), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40012 \midi_in/i1255_2_lut ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre20013 \midi_in/clock_counter_i0_i0 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre20013 \midi_in/clock_counter_i0_i1 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40011 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40012 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module ffsre20013 ( input D0, SP, CK, LSR, output Q );
+
+  FD1P3XZ INST01( .D(D0), .SP(SP), .CK(CK), .SR(LSR), .Q(Q));
+  defparam INST01.REGSET = "SET";
+  defparam INST01.SRMODE = "CE_OVER_LSR";
+endmodule
+
+module SLICE_44 ( input DI1, DI0, C1, B1, C0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40011 \midi_in/i1252_2_lut ( .A(GNDI), .B(B1), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40014 \midi_in/i1253_2_lut ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  ffsre20013 \midi_in/clock_counter_i0_i6 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre20013 \midi_in/clock_counter_i0_i5 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40014 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0A0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_46 ( input DI1, DI0, B1, A1, D0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40015 \midi_in/i1250_2_lut ( .A(A1), .B(B1), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40016 \midi_in/i1251_2_lut ( .A(A0), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre20013 \midi_in/clock_counter_i0_i8 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre20013 \midi_in/clock_counter_i0_i7 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40015 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40016 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAA00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_48 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40017 i735_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40018 i736_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/byte_sig_i6 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/byte_sig_i7 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40017 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCEC4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40018 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xD8CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_50 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40019 i733_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40020 i734_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/byte_sig_i4 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/byte_sig_i5 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40019 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF1E0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40020 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAAB8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_52 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output 
+    Q0, Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40021 i731_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40022 i732_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/byte_sig_i2 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/byte_sig_i3 ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40021 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAAAC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40022 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCDC8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_57 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40023 \sound_out/get_frequency/i3315_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40024 \sound_out/get_frequency/i62_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40023 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0C4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40024 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAF95") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_59 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40025 \sound_out/get_frequency/i97_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40026 \sound_out/get_frequency/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40025 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x20EC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40026 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_60 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40027 \sound_out/get_frequency/i2_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40028 \sound_out/get_frequency/i1317_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40027 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0C00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40028 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_61 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40029 \sound_out/get_frequency/i3311_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40030 \sound_out/get_frequency/i1_2_lut_adj_11 ( .A(GNDI), .B(GNDI), 
+    .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40029 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF080") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40030 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_62 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40031 \sound_out/get_frequency/i30_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40032 \sound_out/get_frequency/i1_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40031 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x88D8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40032 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0100") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_63 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40033 i145_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40034 i3336_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40033 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFC74") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40034 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFB00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_65 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40035 \midi_in/i3356_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40036 \midi_in/i1_2_lut_adj_1 ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40035 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0455") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40036 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_66 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40037 \midi_in/i1_3_lut_4_lut_adj_4 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40038 \midi_in/i686_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40037 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0012") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40038 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_67 ( input D1, C1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40039 \sound_out/counter_31__I_0_i22_3_lut ( .A(A1), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40040 \sound_out/counter_31__I_0_i20_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40039 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF550") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40040 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF330") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_68 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40041 \sound_out/get_frequency/i60_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40042 \sound_out/get_frequency/i3272_2_lut_3_lut_4_lut ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40041 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x88B8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40042 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_70 ( input D1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40043 \sound_out/get_frequency/i3119_3_lut ( .A(A1), .B(B1), .C(GNDI), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40044 \sound_out/get_frequency/i56_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40043 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF88") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40044 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x44E4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_71 ( input C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40045 \sound_out/counter_31__I_0_i18_3_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40046 \sound_out/counter_31__I_0_i16_3_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40045 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xB2B2") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40046 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF550") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_72 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40047 \sound_out/get_frequency/i1_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40048 \sound_out/get_frequency/i21_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40047 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40048 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF088") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_74 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40049 \sound_out/get_frequency/i62_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40050 \sound_out/get_frequency/i3280_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40049 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xD888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40050 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x206D") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_75 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40051 \sound_out/counter_31__I_0_i14_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40052 \sound_out/counter_31__I_0_i12_3_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40051 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0D4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40052 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xD4D4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_76 ( input D1, C1, B1, A1, D0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40053 \sound_out/get_frequency/i76_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40054 \sound_out/get_frequency/i1248_2_lut ( .A(A0), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40053 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8D88") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40054 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAA00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_78 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40055 \sound_out/get_frequency/i60_4_lut_adj_5 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40056 \sound_out/get_frequency/i1329_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40055 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x2E0C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40056 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEEEC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_79 ( input D1, C1, B1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40057 \sound_out/counter_31__I_0_i10_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40058 \sound_out/counter_31__I_0_i8_3_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40057 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40058 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0FA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_80 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40059 \sound_out/get_frequency/i64_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40060 \sound_out/get_frequency/i3337_3_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40059 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x50CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40060 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF2F2") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_82 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40061 \sound_out/get_frequency/i73_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40062 \sound_out/get_frequency/i3313_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40061 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEC20") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40062 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5398") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_83 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40063 \sound_out/counter_31__I_0_i6_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40064 \sound_out/counter_31__I_0_i4_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40063 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0B2") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40064 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8EAF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_84 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40065 \sound_out/get_frequency/i2_4_lut_adj_7 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40066 \sound_out/get_frequency/i3308_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40065 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x88C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40066 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0330") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_86 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40067 \sound_out/get_frequency/i72_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40068 \sound_out/get_frequency/i70_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40067 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEA40") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40068 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x57AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_87 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40069 \sound_out/i11_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40070 \sound_out/i9_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40069 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40070 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_89 ( input DI1, D1, C1, B1, A1, C0, B0, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut40071 i12_4_lut_adj_14( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40072 \sound_out/i663_2_lut ( .A(GNDI), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/on_off_sig_29 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40071 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40072 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_90 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40073 \sound_out/i1277_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40074 \sound_out/counter_31__I_0_i36_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40073 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3332") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40074 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFAB2") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_91 ( input D1, C1, B1, A1, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40075 \sound_out/i10_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40076 \sound_out/i1_2_lut ( .A(GNDI), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40075 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40076 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFCFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_95 ( input C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40045 \sound_out/counter_31__I_0_i34_3_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40058 \sound_out/counter_31__I_0_i32_3_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_97 ( input D1, C1, B1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40057 \sound_out/counter_31__I_0_i30_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40052 \sound_out/counter_31__I_0_i28_3_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_98 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40077 \sound_out/get_frequency/i71_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40078 \sound_out/get_frequency/i69_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40077 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xB888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40078 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x63CD") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_100 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40067 \sound_out/get_frequency/i82_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40079 \sound_out/get_frequency/i3299_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40079 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xE566") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_101 ( input C1, B1, A1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40045 \sound_out/counter_31__I_0_i26_3_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40052 \sound_out/counter_31__I_0_i24_3_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_102 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40055 \sound_out/get_frequency/i68_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40080 \sound_out/get_frequency/i1323_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40080 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFECC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_104 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40081 \sound_out/get_frequency/i58_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40082 \sound_out/get_frequency/i3309_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40081 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xE2C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40082 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x1011") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_105 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40083 \sound_out/get_frequency/i3296_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40084 \sound_out/get_frequency/i81_3_lut_4_lut_3_lut ( .A(A0), .B(B0), 
+    .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40083 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0072") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40084 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xBB44") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_107 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40085 \sound_out/get_frequency/i2_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40086 \sound_out/get_frequency/i75_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40085 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40086 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4042") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_109 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40087 \sound_out/get_frequency/i2_4_lut_adj_6 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40088 \sound_out/get_frequency/i3310_2_lut_3_lut ( .A(GNDI), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40087 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x20A8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40088 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0C00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_110 ( input D1, B1, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40089 \sound_out/get_frequency/i113_rep_37_2_lut ( .A(GNDI), .B(B1), 
+    .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40090 \sound_out/get_frequency/i1_2_lut_adj_10 ( .A(A0), .B(GNDI), .C(C0), 
+    .D(GNDI), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40089 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x33CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40090 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_111 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40091 \sound_out/get_frequency/i1_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40092 \sound_out/get_frequency/i102_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40091 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF4F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40092 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEA40") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_113 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40093 \sound_out/get_frequency/i3326_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40094 \sound_out/get_frequency/i66_3_lut_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40093 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0075") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40094 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3C0C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_115 ( input D1, C1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40095 \sound_out/get_frequency/i101_3_lut ( .A(A1), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40096 \sound_out/get_frequency/i1313_2_lut_3_lut ( .A(GNDI), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40095 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5F0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40096 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_117 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40097 \sound_out/get_frequency/i3285_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40098 \sound_out/get_frequency/i3281_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40097 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xB800") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40098 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0F0C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_119 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40099 \sound_out.get_frequency.i3301_2_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40100 \sound_out/get_frequency/i60_4_lut_adj_8 ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40099 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40100 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0A75") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_121 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40101 \sound_out/get_frequency/i3277_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40102 \sound_out/get_frequency/i1302_rep_76_2_lut_3_lut ( .A(A0), .B(B0), 
+    .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40101 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x070A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40102 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFEFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_123 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40103 \sound_out/get_frequency/i3275_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40104 \sound_out/get_frequency/i71_3_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40103 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x1151") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40104 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA5F5") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_124 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40105 \sound_out/get_frequency/i3333_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40106 \sound_out/get_frequency/i1266_2_lut ( .A(GNDI), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40105 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0204") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40106 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_127 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40107 \sound_out/get_frequency/i3322_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40108 \sound_out/get_frequency/i1_rep_73_3_lut ( .A(A0), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40107 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8C04") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40108 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEEAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_128 ( input D0, B0, A0, output F0 );
+  wire   GNDI;
+
+  lut40109 \sound_out/get_frequency/i61_3_lut ( .A(A0), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40109 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_129 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40110 \sound_out/get_frequency/i3283_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40111 \sound_out/get_frequency/i1_rep_22_2_lut ( .A(GNDI), .B(B0), 
+    .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40110 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x2A88") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40111 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_131 ( input D1, C1, B1, A1, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40112 \sound_out/get_frequency/i3339_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40113 \sound_out/get_frequency/i1256_2_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40112 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8400") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40113 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFCFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_133 ( input D1, C1, B1, A1, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40114 \sound_out/get_frequency/i3274_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40115 \sound_out/get_frequency/i3318_2_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40114 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0020") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40115 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA5A5") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_135 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40116 \sound_out.get_frequency.i3329_2_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40117 \sound_out/get_frequency/i3330_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40116 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40117 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x1716") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_138 ( input D1, C1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40118 \sound_out/get_frequency/i3298_3_lut ( .A(A1), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40119 \sound_out/get_frequency/i1296_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40118 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF05") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40119 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCC0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_139 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40120 \sound_out/get_frequency/i61_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40121 \sound_out.get_frequency.i59_rep_25_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40120 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x30AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40121 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5552") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_141 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40122 i3117_4_lut_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40123 i3282_4_lut( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40122 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFD7F") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40123 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFCFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_142 ( input DI1, D1, B1, D0, C0, B0, A0, CE, LSR, CLK, output Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
+
+  lut40124 \midi_in/i1254_2_lut ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40125 \midi_in/i1_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre20013 \midi_in/clock_counter_i0_i4 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40124 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40125 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xDFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_143 ( input D1, C1, B1, A1, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40126 \midi_in/i1_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40127 \midi_in/i1_2_lut ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40126 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF7FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40127 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFAFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_144 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40128 \midi_in/i3412_3_lut ( .A(GNDI), .B(B1), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40129 \midi_in/i3410_2_lut_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40128 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40129 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFDF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_145 ( input DI1, D1, C1, B1, A1, D0, B0, A0, CLK, output Q1, F0, 
+    F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut40130 i773_3_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40131 \midi_in/i2_2_lut_3_lut ( .A(A0), .B(B0), .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/bit_index_i0 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40130 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3308") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40131 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8800") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_146 ( input D0, C0, B0, A0, output F0 );
+
+  lut40132 \midi_in/tracker_1__I_0_69_Mux_0_i2_4_lut_4_lut ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40132 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC2C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_147 ( input C0, A0, output F0 );
+  wire   GNDI;
+
+  lut40133 \midi_in/i671_2_lut ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40133 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA0A0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_148 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40134 \midi_in/i4_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40135 \midi_in/i3_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40134 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40135 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0080") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_149 ( input DI1, C1, D0, C0, B0, A0, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut40136 SLICE_149_K1( .A(GNDI), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40137 \midi_in/i338_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_in/data_r_61 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40136 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40137 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA333") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_150 ( input D1, C1, A1, D0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40138 \midi_in/i2_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40139 \midi_in/i2_2_lut_3_lut_adj_2 ( .A(A0), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40138 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40139 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xBBFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_156 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40140 \sound_out/get_frequency/i99_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40141 \sound_out/get_frequency/i3328_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40140 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC30C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40141 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x7D75") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_157 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40142 \sound_out/get_frequency/i3287_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40143 \sound_out/get_frequency/i3304_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40142 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF5D9") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40143 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x6CFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_159 ( input D1, C1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40144 \midi_parse/i1_3_lut_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40145 \midi_parse/i1_3_lut_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40144 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA00A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40145 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCD00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_160 ( input DI1, D1, B1, D0, C0, B0, A0, CE, LSR, CLK, output Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
+
+  lut40146 \midi_parse/i1242_2_lut ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40147 \midi_parse/i1_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \midi_parse/tracker_i0_i0 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40146 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40147 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCC8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_161 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40148 \midi_in/i1_2_lut_4_lut_adj_3 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40149 \midi_in/i1_2_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40148 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFEF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40149 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFBFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_174 ( input DI1, D1, C1, B1, A1, D0, C0, B0, A0, CLK, output Q1, 
+    F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly;
+
+  lut40150 i12_4_lut_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40151 \midi_parse/i1_2_lut_4_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \midi_parse/tracker_i0_i1 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40150 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0F20") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40151 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8C04") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_178 ( input D1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40152 \midi_in/i1306_2_lut ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40153 \midi_in/i1_2_lut_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40152 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40153 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_181 ( input B0, A0, output F0 );
+  wire   GNDI;
+
+  lut40154 \midi_parse/i640_2_lut ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40154 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4444") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_183 ( input B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40155 \midi_in/equal_18_i4_2_lut ( .A(A1), .B(B1), .C(GNDI), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40156 \midi_in/i1286_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40155 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xDDDD") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40156 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_184 ( input DI1, D1, C1, B1, A1, C0, A0, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut40157 i12_4_lut( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40158 i3342_2_lut( .A(A0), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/status_byte_i0_i4 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40157 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC0AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40158 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_187 ( input DI1, D1, B1, D0, B0, CE, CLK, output Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, CE_dly;
+
+  lut40159 \sound_out/sample_I_0_2_lut ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40106 \sound_out/i3_2_lut ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \sound_out/sample_sig_17 ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+  endspecify
+
+endmodule
+
+module lut40159 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x33CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_192 ( input DI1, D1, C1, B1, A1, C0, A0, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut4 i11_4_lut_adj_13( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40090 \sound_out/get_frequency/i1_2_lut_adj_9 ( .A(A0), .B(GNDI), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_parse/data_byte_i0_i6 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module SLICE_194 ( input DI1, D1, C1, B1, A1, D0, B0, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  lut40160 \midi_in/i723_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40161 \midi_parse/i1_2_lut ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \midi_in/valid_sig_62 ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40160 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x88C8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40161 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_196 ( input C1, A1, D0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40162 \midi_in/equal_17_i4_2_lut ( .A(A1), .B(GNDI), .C(C1), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40106 \midi_in/equal_20_i4_2_lut ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40162 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF5F5") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_199 ( output F0 );
+  wire   GNDI;
+
+  lut40163 i3557( .A(GNDI), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module lut40163 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module midi_in_data_60 ( input PADDI, INCLK, output DI0 );
+  wire   GNDI, VCCI, PADDI_dly, INCLK_dly;
+
+  IOL_B_B \midi_in/data_60 ( .PADDI(PADDI_dly), .DO1(GNDI), .DO0(GNDI), 
+    .CE(VCCI), .IOLTO(GNDI), .HOLD(GNDI), .INCLK(INCLK_dly), .OUTCLK(GNDI), 
+    .PADDO(), .PADDT(), .DI1(), .DI0(DI0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (INCLK => DI0) = (0:0:0,0:0:0);
+    $setuphold (posedge INCLK, PADDI, 0:0:0, 0:0:0,,,, INCLK_dly, PADDI_dly);
+  endspecify
+
+endmodule
+
+module IOL_B_B ( input PADDI, DO1, DO0, CE, IOLTO, HOLD, INCLK, OUTCLK, 
+    output PADDO, PADDT, DI1, DI0 );
+
+  IOL_B INST10( .PADDI(PADDI), .DO1(DO1), .DO0(DO0), .CE(CE), .IOLTO(IOLTO), 
+    .HOLD(HOLD), .INCLK(INCLK), .OUTCLK(OUTCLK), .PADDO(PADDO), .PADDT(PADDT), 
+    .DI1(DI1), .DI0(DI0));
+  defparam INST10.DDROUT = "NO";
+  defparam INST10.LATCHIN = "NONE_REG";
+endmodule
+
+module CLKSIG ( input CLKHFPU, CLKHFEN, output CLKHF );
+  wire   GNDI;
+
+  HSOSC_CORE_B CLKSIG( .CLKHFPU(CLKHFPU), .CLKHFEN(CLKHFEN), .TRIM9(GNDI), 
+    .TRIM8(GNDI), .TRIM7(GNDI), .TRIM6(GNDI), .TRIM5(GNDI), .TRIM4(GNDI), 
+    .TRIM3(GNDI), .TRIM2(GNDI), .TRIM1(GNDI), .TRIM0(GNDI), .CLKHF(CLKHF));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module HSOSC_CORE_B ( input CLKHFPU, CLKHFEN, TRIM9, TRIM8, TRIM7, TRIM6, 
+    TRIM5, TRIM4, TRIM3, TRIM2, TRIM1, TRIM0, output CLKHF );
+
+  HSOSC_CORE INST10( .CLKHFPU(CLKHFPU), .CLKHFEN(CLKHFEN), .TRIM9(TRIM9), 
+    .TRIM8(TRIM8), .TRIM7(TRIM7), .TRIM6(TRIM6), .TRIM5(TRIM5), .TRIM4(TRIM4), 
+    .TRIM3(TRIM3), .TRIM2(TRIM2), .TRIM1(TRIM1), .TRIM0(TRIM0), .CLKHF(CLKHF));
+  defparam INST10.CLKHF_DIV = "0b00";
+  defparam INST10.FABRIC_TRIME = "DISABLE";
+endmodule
+
+module baud_sync_lscc_pll_inst_u_PLL_B ( input REFERENCECLK, FEEDBACK, RESET_N, 
+    output INTFBOUT, OUTGLOBAL );
+  wire   GNDI;
+
+  PLL_B_B \baud_sync/lscc_pll_inst/u_PLL_B ( .REFERENCECLK(REFERENCECLK), 
+    .FEEDBACK(FEEDBACK), .DYNAMICDELAY7(GNDI), .DYNAMICDELAY6(GNDI), 
+    .DYNAMICDELAY5(GNDI), .DYNAMICDELAY4(GNDI), .DYNAMICDELAY3(GNDI), 
+    .DYNAMICDELAY2(GNDI), .DYNAMICDELAY1(GNDI), .DYNAMICDELAY0(GNDI), 
+    .BYPASS(GNDI), .RESET_N(RESET_N), .SCLK(GNDI), .SDI(GNDI), .LATCH(GNDI), 
+    .INTFBOUT(INTFBOUT), .OUTCORE(), .OUTGLOBAL(OUTGLOBAL), .OUTCOREB(), 
+    .OUTGLOBALB(), .SDO(), .LOCK());
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (REFERENCECLK => OUTGLOBAL) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module PLL_B_B ( input REFERENCECLK, FEEDBACK, DYNAMICDELAY7, DYNAMICDELAY6, 
+    DYNAMICDELAY5, DYNAMICDELAY4, DYNAMICDELAY3, DYNAMICDELAY2, DYNAMICDELAY1, 
+    DYNAMICDELAY0, BYPASS, RESET_N, SCLK, SDI, LATCH, output INTFBOUT, OUTCORE, 
+    OUTGLOBAL, OUTCOREB, OUTGLOBALB, SDO, LOCK );
+
+  PLL_B INST10( .REFERENCECLK(REFERENCECLK), .FEEDBACK(FEEDBACK), 
+    .DYNAMICDELAY7(DYNAMICDELAY7), .DYNAMICDELAY6(DYNAMICDELAY6), 
+    .DYNAMICDELAY5(DYNAMICDELAY5), .DYNAMICDELAY4(DYNAMICDELAY4), 
+    .DYNAMICDELAY3(DYNAMICDELAY3), .DYNAMICDELAY2(DYNAMICDELAY2), 
+    .DYNAMICDELAY1(DYNAMICDELAY1), .DYNAMICDELAY0(DYNAMICDELAY0), 
+    .BYPASS(BYPASS), .RESET_N(RESET_N), .SCLK(SCLK), .SDI(SDI), .LATCH(LATCH), 
+    .INTFBOUT(INTFBOUT), .OUTCORE(OUTCORE), .OUTGLOBAL(OUTGLOBAL), 
+    .OUTCOREB(OUTCOREB), .OUTGLOBALB(OUTGLOBALB), .SDO(SDO), .LOCK(LOCK));
+  defparam INST10.DELAY_ADJUSTMENT_MODE_FEEDBACK = "FIXED";
+  defparam INST10.DELAY_ADJUSTMENT_MODE_RELATIVE = "FIXED";
+  defparam INST10.DIVF = "82";
+  defparam INST10.DIVQ = "5";
+  defparam INST10.DIVR = "3";
+  defparam INST10.ENABLE_ICEGATE_PORTA = "0";
+  defparam INST10.ENABLE_ICEGATE_PORTB = "0";
+  defparam INST10.FDA_FEEDBACK = "0";
+  defparam INST10.FDA_RELATIVE = "0";
+  defparam INST10.FEEDBACK_PATH = "SIMPLE";
+  defparam INST10.FILTER_RANGE = "1";
+  defparam INST10.PLLOUT_SELECT_PORTA = "GENCLK";
+  defparam INST10.PLLOUT_SELECT_PORTB = "GENCLK";
+  defparam INST10.SHIFTREG_DIV_MODE = "0";
+  defparam INST10.TEST_MODE = "0";
+  defparam INST10.EXTERNAL_DIVIDE_FACTOR = "NONE";
+  defparam INST10.FREQUENCY_PIN_REFERENCECLK = "48.000000";
+endmodule
+
+module serial ( output PADDI, input serial );
+  wire   GNDI;
+
+  BB_B_B \serial_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), .B(serial));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (serial => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module BB_B_B ( input T_N, I, output O, inout B );
+
+  BB_B INST10( .T_N(T_N), .I(I), .O(O), .B(B));
+endmodule
+
+module sample ( input PADDO, output sample );
+  wire   VCCI;
+
+  BB_B_B \sample_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(sample));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => sample) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule

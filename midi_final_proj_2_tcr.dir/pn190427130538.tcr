@@ -1,0 +1,19 @@
+#Start recording tcl command: 4/27/2019 11:56:17
+#Project Location: C:/Users/ellesh01/Desktop/midi_final_proj_2; Project name: midi_final_proj_2
+prj_open "C:/Users/ellesh01/Desktop/midi_final_proj_2/midi_final_proj_2.rdf"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+launch_programmer_prj "C:/lscc/radiant/1.0"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_disable_source "C:/Users/ellesh01/Desktop/midi_final_proj_2/test4.pdc"
+prj_add_source "C:/Users/ellesh01/Desktop/midi_final_proj_2/test5.pdc"
+prj_enable_source "C:/Users/ellesh01/Desktop/midi_final_proj_2/test5.pdc"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+#Stop recording: 4/27/2019 13:05:38
