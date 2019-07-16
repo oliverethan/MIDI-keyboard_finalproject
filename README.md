@@ -48,6 +48,26 @@ Note Off | 0x80 | Key number
 Note On | 0x90 | Key number
 
 
+This module is based of of 3 states: idle, status, and data. The FSM begins at idle, enters status when looking at the status byte, and enters data when looking at data byte 1. Any other conditions return the FSM to idle. The idle state waits for a valid bit and for byte(7)to be high. This signifies that a status byte has been read in and can be evaluated. The Note On/Note Off status we are interested in occurs in the four most significant bits, where a value of 0x80 sets the on_off signal low and 0x90 sets it low. This module outputs the on_off signal to prompt the play_note module to begin or stop emitting a signal. When byte(7)becomes low, this signifies the beginning of data byte 1, and thus shifts the FSM into data state. The entire byte delivered during this state is saved to note(7 downto 0) and output to play_note in order to play or cease playing that note, ranging from 0 to 127. After this occurs the state changes to idle again, completely ignoring the following “discard” byte. 
+
+## play_note and rom_lut
+
+Sound is created from pressurized air vibrating a certain frequency. Regardless of the shape wave (square, sine, triangle), if it is output at the frequency corresponding to the desired note, the resulting sound will still ring at the desired pitch, but the tone of the sound may be different. In our project, we used square waves because of the pins of the FPGA are limited to a high or low voltage. 
+
+Our play_note module creates an oscillation by counting clock cycles up to a specified number calculated based on the 48MHz clock rate and the note’s frequency. To calculate this number, let us call it N, we divided the clock frequency by the note frequency, which produces the number of clock cycles in the period of that note. We then divided this number by 2 to get the exact point at which the square wave goes from high to low. This was repeated for all 75 notes. These counters were stored in a ROM lookup-table. Each note on the keyboard corresponds to a distinct 8-bit combination. By using the UART signal functionality on Waveforms, we were able to determine the exact combinations that corresponded to a given key. All these 8-bit combinations are stored in another module called rom_lut with their corresponding values of N.
+
+When the play_note module receives key(7 downto 0), it passes the combination to rom_lut, which returns the desired counter. If the on_off signal input from midi_interpreter is high, a counter then begins counting up to the value of N received from the ROM, incrementing by one each clock cycle. When the counter reaches its maximum value, it switches the output from either 0 to 1 or vice versa. It continues to do this until the note on_off signal is low. By oscillating between 1 and 0 on every clock cycle and routing the output sample to an amplifier and speaker, a sound can be played.
+
+## RESULTS
+
+We are happy to report that the state of our project is working and complete! Because our project relies upon sound to confirm functionality, it isn’t possible to provide proof of this in a report. There are videos of people interacting with the synthesizer that will be uploaded to Dropbox. Some pictures of our final product are included below. 
+
+Some metrics related to overall performance involve our ability to play 75 notes in total. This was made possible by the UP and DOWN features on the MIDI keyboard, which allow the relatively small 25-key MIDI to be extended several more octaves above and below what is visible. The maximum bytes processed within a certain timeframe relates directly to the baud rate of the MIDI, which we have mentioned delivers a serial byte to input every 320 microseconds. This kind of timing makes it so that the human ear believes the sound is emitted instantaneously. 
+
+There aren’t any explicit bugs in our project, considering that our goal for implementation was to play one note at a time, and this was delivered. However, when switching between notes, it is necessary to cleanly lift off of one note before selecting another, or else the following note cannot transmit data when the other note is still transmitting data, and thus makes no sound. While this makes a lot of sense to us given our implementation, from the perspective of the user experience, our solution is might be limited. 
+
+
+
 
 
 
