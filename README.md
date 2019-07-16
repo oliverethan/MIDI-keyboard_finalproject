@@ -20,4 +20,41 @@ This block diagram represents everything within the top module, for which there 
 
 Farthest left, we have the module HSOSC, which generates a 48MHz clock, and PLL, which takes this clock rate as input and outputs a clock of a different frequency, which in our case was 31.125MHz. Because we have worked closely with these in previous laboratories, we will not delve any deeper into these modules. It should be noted that the midi_reciever and midi_interpreter modules run on the 31.125MHz clock, whereas the play_note module runs on the 48MHz clock, for reasons soon to be explained in the  module descriptions. 
 
+Before describing the midi_reciever and midi_interpreter modules, it is important to describe the details of the MIDI protocol. The MIDI specification describes it concisely as follows: 
+
+> “MIDI is an asynchronous serial interface. The baud rate is 31.25 Kbaud (+/- 1%). There is 1 start bit, 8 data bits, and 1 stop bit (ie, 10 bits total), for a period of 320 microseconds per serial byte. … The MIDI protocol is made up of messages. A message consists of a string (ie, series) of 8-bit bytes.”
+
+So, our MIDI keyboard emits serial data every 320 microseconds, in a message that consists of three 8-bit bytes in succession, where each byte holds different information about the actions on the keyboard. Our implementation relies on the consistency of these messages. By parsing these messages as they are input, we are able to extract desired information such as key, and manipulate it for our goal. 
+
+As mentioned in the specification, each byte is organized in the same way: 1 start bit, 8 data bits, and 1 stop bit. This is also known as the UART serial data stream, for which a visualization is included below. Relevant information lies in the data bits, and must be parsed out of the stream. This is precisely what the midi_reciever module is responsible for. 
+
+While the midi_receiver interprets every byte that is read in, it is also necessary to discern these bytes from one another, since every message consists of 3 distinct bytes. It is the responsibility of the midi_interpreter module to interpret every 8-bit byte extracted by the previous module. The 3 bytes are organized as follows: a status byte, data byte 1, and data byte 2, in that order, reliably in succession. Each byte contains the following information: 
+
+As can be seen from this visual, it is possible to discern the status from data bytes because the first bit of the status byte is always high. Now that it is more clear how these messages are formatted, we can look more closely at how to implement the midi_reciever and midi_interpreter modules.
+
+## midi_reciever
+
+The asynchronous MIDI interface requires that data sampling occurs at the right time. This timing is directly related to the baud rate, which is 31.25 KHz. Using this value, we can find how many clock cycles are in one bit, or how many clock cycles occur while one bit is being read. Having this value allows us to create a counter that can signify the end of one bit and the beginning of another. Reaching this counter by incrementing on every clock cycle is how we know which bit we are looking at within one byte. This counter was calculated by dividing the clock frequency by the baud rate. Because we wanted this counter to be an integer, we decided to use the PLL module to generate a frequency that could easily be divided by 31.25KHz.
+
+As the stream is sampled, we look for transitions that signify the state of the stream. The states in this FSM are idle, start bit, data bits, and stop bit. A FSM diagram is provided above, where data_r represents the current bit being read, and CLKS_PER_BIT represents the counter (31.125MHz/31.25kHz = 996). The state machine begins in the idle state. Referencing the UART serial data stream on the previous page, the line begins high, and when it drops low, this means we are beginning to sample the start bit. First, we want to make sure that we are still sampling the start bit, which is done by incrementing halfway up to the counter and ensuring data_r is still low. If so, we proceed in incrementing all the way up to the counter, at which point we move into the data bits state. We would like to sample from the middle of each data bit, so we increment halfway to the counter and save the bit to the corresponding index within the byte output, where the first bit read in should be sent to byte(0), and so on. The index is incremented every time the counter reaches its maximum (every time a new bit is read in), until all 8 have been read in, at which point the byte(7 downto 0) is full of data and we transition into the stop bit state. The stop bit state must set the valid signal to high when the counter reaches its maximum, to signify that an entire byte has been read in. The state machine will then transition back to idle for cleanup.
+
+## midi_interpreter
+
+This module works on a byte level within the architecture. It is designed to interpret one full MIDI message. The MIDI message is broken down into 3 bytes. Every byte parsed by the midi_receiever is input into the midi_interpreter. Because our implementation only handles Note On/Note Off features, we only need to parse the status byte for these values (which appear in the high 4 bits) and to keep track of the entirety of data byte 1. We have dubbed data byte 2 the “discard” byte, because we do not use it. This module receives a byte(7 downto 0) and a valid bit, and must differentiate the bytes each time the valid bit is high, signifying that an entire byte has been successfully read in. The critical pieces of information from the message are shown in the table below.
+
+Voice Message | Status Byte | Data Byte 1
+| ------------- |-------------| -----|
+Note Off | 0x80 | Key number
+Note On | 0x90 | Key number
+
+
+
+
+
+
+
+
+
+
+
 
