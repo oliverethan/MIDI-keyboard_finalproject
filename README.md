@@ -36,14 +36,14 @@ While the midi_receiver interprets every byte that is read in, it is also necess
 
 As can be seen from this visual, it is possible to discern the status from data bytes because the first bit of the status byte is always high. Now that it is more clear how these messages are formatted, we can look more closely at how to implement the midi_reciever and midi_interpreter modules.
 
-## midi_reciever
+## [midi_reciever](midi_reciever.vhd)
 
 The asynchronous MIDI interface requires that data sampling occurs at the right time. This timing is directly related to the baud rate, which is 31.25 KHz. Using this value, we can find how many clock cycles are in one bit, or how many clock cycles occur while one bit is being read. Having this value allows us to create a counter that can signify the end of one bit and the beginning of another. Reaching this counter by incrementing on every clock cycle is how we know which bit we are looking at within one byte. This counter was calculated by dividing the clock frequency by the baud rate. Because we wanted this counter to be an integer, we decided to use the PLL module to generate a frequency that could easily be divided by 31.25KHz.
 ![finished](images/image5.png?raw=true "Title")
 
 As the stream is sampled, we look for transitions that signify the state of the stream. The states in this FSM are idle, start bit, data bits, and stop bit. A FSM diagram is provided above, where data_r represents the current bit being read, and CLKS_PER_BIT represents the counter (31.125MHz/31.25kHz = 996). The state machine begins in the idle state. Referencing the UART serial data stream on the previous page, the line begins high, and when it drops low, this means we are beginning to sample the start bit. First, we want to make sure that we are still sampling the start bit, which is done by incrementing halfway up to the counter and ensuring data_r is still low. If so, we proceed in incrementing all the way up to the counter, at which point we move into the data bits state. We would like to sample from the middle of each data bit, so we increment halfway to the counter and save the bit to the corresponding index within the byte output, where the first bit read in should be sent to byte(0), and so on. The index is incremented every time the counter reaches its maximum (every time a new bit is read in), until all 8 have been read in, at which point the byte(7 downto 0) is full of data and we transition into the stop bit state. The stop bit state must set the valid signal to high when the counter reaches its maximum, to signify that an entire byte has been read in. The state machine will then transition back to idle for cleanup.
 
-## midi_interpreter
+## [midi_interpreter](midi_interpreter.vhd)
 
 This module works on a byte level within the architecture. It is designed to interpret one full MIDI message. The MIDI message is broken down into 3 bytes. Every byte parsed by the midi_receiever is input into the midi_interpreter. Because our implementation only handles Note On/Note Off features, we only need to parse the status byte for these values (which appear in the high 4 bits) and to keep track of the entirety of data byte 1. We have dubbed data byte 2 the “discard” byte, because we do not use it. This module receives a byte(7 downto 0) and a valid bit, and must differentiate the bytes each time the valid bit is high, signifying that an entire byte has been successfully read in. The critical pieces of information from the message are shown in the table below.
 
@@ -56,7 +56,7 @@ Note On | 0x90 | Key number
 This module is based of of 3 states: idle, status, and data. The FSM begins at idle, enters status when looking at the status byte, and enters data when looking at data byte 1. Any other conditions return the FSM to idle. The idle state waits for a valid bit and for byte(7)to be high. This signifies that a status byte has been read in and can be evaluated. The Note On/Note Off status we are interested in occurs in the four most significant bits, where a value of 0x80 sets the on_off signal low and 0x90 sets it low. This module outputs the on_off signal to prompt the play_note module to begin or stop emitting a signal. When byte(7)becomes low, this signifies the beginning of data byte 1, and thus shifts the FSM into data state. The entire byte delivered during this state is saved to note(7 downto 0) and output to play_note in order to play or cease playing that note, ranging from 0 to 127. After this occurs the state changes to idle again, completely ignoring the following “discard” byte.
 ![finished](images/image13.png?raw=true "Title")
 
-## play_note and rom_lut
+## [play_note](play_note.vhd) and [rom_lut](rom_lut.vhd)
 
 Sound is created from pressurized air vibrating a certain frequency. Regardless of the shape wave (square, sine, triangle), if it is output at the frequency corresponding to the desired note, the resulting sound will still ring at the desired pitch, but the tone of the sound may be different. In our project, we used square waves because of the pins of the FPGA are limited to a high or low voltage. 
 
